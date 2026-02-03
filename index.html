@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FahiJawz Collection | Where Tradition Meets Trend</title>
+    <style>
+        :root {
+            --bg-dark: #0f172a;
+            --bg-slate: #1e293b;
+            --gold: #eab308;
+            --rose: #ec4899;
+            --text-light: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+            -webkit-user-select: none;
+            user-select: none;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--bg-dark) 0%, #020617 100%);
+            color: var(--text-light);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            padding: 40px;
+            background: rgba(30, 41, 59, 0.5);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        .logo-link {
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .logo {
+            width: 180px;
+            height: auto;
+            margin-bottom: 24px;
+            border-radius: 50%;
+            border: 3px solid var(--gold);
+            padding: 5px;
+            box-shadow: 0 0 20px rgba(234, 179, 8, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            color: var(--gold);
+            margin-bottom: 8px;
+            letter-spacing: -0.02em;
+            font-weight: 800;
+        }
+
+        .slogan {
+            font-size: 1.4rem;
+            color: var(--text-muted);
+            font-style: italic;
+            margin-bottom: 48px;
+            font-weight: 300;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+
+        button {
+            padding: 12px 28px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-secondary {
+            background-color: var(--bg-slate);
+            color: var(--text-light);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-secondary:hover {
+            background-color: #334155;
+            transform: translateY(-2px);
+        }
+
+        .view-page-btn {
+            display: inline-block;
+            text-decoration: none;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .view-page-btn button {
+            background: linear-gradient(to right, #ca8a04, var(--gold));
+            color: #000;
+            width: 100%;
+            padding: 16px;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .view-page-btn button:hover {
+            filter: brightness(1.1);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(234, 179, 8, 0.4);
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 50;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(2, 6, 23, 0.8);
+            -webkit-backdrop-filter: blur(8px);
+            backdrop-filter: blur(8px);
+        }
+
+        .modal-content {
+            background-color: var(--bg-slate);
+            margin: 5% auto;
+            padding: 40px;
+            border-radius: 24px;
+            width: 90%;
+            max-width: 650px;
+            text-align: left;
+            max-height: 85vh;
+            overflow-y: auto;
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
+        }
+
+        .close {
+            position: absolute;
+            right: 24px;
+            top: 20px;
+            font-size: 32px;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .close:hover {
+            color: var(--gold);
+        }
+
+        h2 {
+            color: var(--gold);
+            margin-bottom: 24px;
+            font-size: 2rem;
+        }
+
+        h4 {
+            margin-top: 24px;
+            color: var(--rose);
+            font-size: 1.1rem;
+        }
+
+        p,
+        li {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+
+        ul {
+            margin-left: 20px;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            opacity: 0.6;
+        }
+
+        @media (max-width: 640px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .container {
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <a href="https://www.facebook.com/FahiJawzCollection" target="_blank" rel="noopener"
+            style="text-decoration: none; display: inline-block;">
+            <img src="logo.png" alt="FahiJawz Collection Logo" class="logo">
+        </a>
+        <h1>FahiJawz Collection</h1>
+        <p class="slogan">"Where Tradition Meets Trend"</p>
+
+        <div class="button-group">
+            <button class="btn-secondary" onclick="openModal('sloganModal')">Our Slogan</button>
+            <button class="btn-secondary" onclick="openModal('privacyModal')">Privacy & Legal</button>
+        </div>
+
+        <a href="https://www.facebook.com/FahiJawzCollection" target="_blank" rel="noopener" class="view-page-btn">
+            <button>View Page</button>
+        </a>
+    </div>
+
+    <div id="sloganModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('sloganModal')">&times;</span>
+            <h2>Our Slogan</h2>
+            <p><strong>"Where Tradition Meets Trend"</strong></p>
+            <p>At <strong>FahiJawz Collection</strong>, we believe that beauty lies in the fusion of our heritage and
+                modern lifestyle. We bring you handcrafted products that celebrate traditional craftsmanship (like
+                Crochet and Jamdani) while keeping you stylish in today's world.</p>
+        </div>
+    </div>
+
+    <div id="privacyModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('privacyModal')">&times;</span>
+            <h2>Privacy & Legal Information</h2>
+
+            <h4>1. Data Privacy</h4>
+            <p>We only collect necessary information (name, contact, address) to process your orders. Your personal data
+                is strictly confidential and never shared with third parties, except for delivery purposes.</p>
+
+            <h4>2. Intellectual Property</h4>
+            <p>All photos, videos, and descriptions on this page are the property of <strong>FahiJawz
+                    Collection</strong>. Unauthorized use for commercial purposes is strictly prohibited.</p>
+
+            <h4>3. Product Disclaimer</h4>
+            <p>As our products are handcrafted, slight variations in color and pattern may occur. This is a mark of
+                their unique, handmade origin.</p>
+
+            <h4>4. Delivery & Payment</h4>
+            <p>Orders are confirmed once complete details are provided. <strong>FahiJawz Collection</strong> is not
+                liable for delays caused by third-party courier services.</p>
+
+            <h4>5. Return & Refund Policy</h4>
+            <p>Please check the product in front of the delivery person. Report any defects immediately for verification
+                and return processing.</p>
+        </div>
+    </div>
+
+    <script>
+        // Disable Right-Click
+        document.addEventListener('contextmenu', event => event.preventDefault());
+
+        // Disable Copy, Cut, and Paste
+        document.addEventListener('copy', event => event.preventDefault());
+        document.addEventListener('cut', event => event.preventDefault());
+
+        // Disable specific keyboard shortcuts (Ctrl+C, Ctrl+U, Ctrl+S, Ctrl+P, PrintScreen)
+        document.addEventListener('keydown', (event) => {
+            if (event.ctrlKey && (['c', 'u', 's', 'p', 'a'].includes(event.key.toLowerCase()))) {
+                event.preventDefault();
+            }
+            if (event.key === 'PrintScreen') {
+                event.preventDefault();
+                alert('Screenshots are disabled to protect content.');
+            }
+        });
+
+        // Smart Protect: Blur on Focus Loss / Visibility Change
+        function toggleProtection(isProtected) {
+            const container = document.querySelector('.container');
+            if (isProtected) {
+                container.classList.add('content-protected');
+            } else {
+                container.classList.remove('content-protected');
+            }
+        }
+
+        window.addEventListener('blur', () => toggleProtection(true));
+        window.addEventListener('focus', () => toggleProtection(false));
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) toggleProtection(true);
+        });
+
+        function openModal(id) {
+            document.getElementById(id).style.display = "block";
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).style.display = "none";
+        }
+
+        // Close modal if clicked outside of it
+        window.onclick = function (event) {
+            if (event.target.className === 'modal') {
+                event.target.style.display = "none";
+            }
+        }
+    </script>
+
+    <footer>
+        &copy; FahiJawz Collection. All Rights Reserved.
+
+    </footer>
+
+</body>
+
+</html>
