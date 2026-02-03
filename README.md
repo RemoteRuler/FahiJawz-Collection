@@ -13,7 +13,7 @@ FahiJawz Collection is a celebration of heritage fused with modern style. We off
 
 ## 🚀 How to View
 
-Simply open the `index.html` file in any modern web browser to explore our brand and policies.
+Visit the live site at: [https://remoteruler.github.io/FahiJawz-Collection/](https://remoteruler.github.io/FahiJawz-Collection/)
 
 ## ⚖️ Legal Information & Copyright
 
