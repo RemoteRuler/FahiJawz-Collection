@@ -221,6 +221,21 @@
                 padding: 24px;
             }
         }
+
+        .map-container {
+            margin-top: 32px;
+            width: 100%;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 350px;
+            display: block;
+        }
     </style>
 </head>
 
@@ -242,6 +257,10 @@
         <a href="https://www.facebook.com/FahiJawzCollection" target="_blank" rel="noopener" class="view-page-btn">
             <button>View Page</button>
         </a>
+
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5812.264333492717!2d90.38894199634086!3d24.75942971335922!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x37564f9a02845b01%3A0x9966d0c5ca12dbfe!2sFahiJawz%20Collection!5e0!3m2!1sen!2sus!4v1770392677046!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
     </div>
 
     <div id="sloganModal" class="modal">
