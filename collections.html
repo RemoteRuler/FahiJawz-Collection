@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="FahiJawz Collection - Browse our handcrafted collections.">
+    <title>Our Collections | FahiJawz Collection</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0f172a;
+            --bg-slate: #1e293b;
+            --gold: #eab308;
+            --gold-light: #fde047;
+            --gold-dark: #ca8a04;
+            --rose: #ec4899;
+            --text-light: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-light: rgba(255, 255, 255, 0.1);
+            --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-user-select: none;
+            user-select: none;
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+            background: linear-gradient(135deg, var(--bg-dark) 0%, #020617 100%);
+            color: var(--text-light);
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(234, 179, 8, 0.08) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 50%, rgba(236, 72, 153, 0.08) 0%, transparent 50%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: sticky;
+            top: 0;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(234, 179, 8, 0.2);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .nav-logo img {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            border: 2px solid var(--gold);
+            padding: 2px;
+            transition: var(--transition);
+        }
+
+        .nav-logo:hover img {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(234, 179, 8, 0.4);
+        }
+
+        .nav-logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gold);
+        }
+
+        .nav-back {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            background: rgba(30, 41, 59, 0.8);
+            border: 1px solid var(--border-light);
+            transition: var(--transition);
+        }
+
+        .nav-back:hover {
+            background: var(--bg-slate);
+            border-color: var(--gold);
+            transform: translateX(-3px);
+        }
+
+        /* Header */
+        .page-header {
+            text-align: center;
+            padding: 4rem 5% 3rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-shadow: 0 2px 10px rgba(234, 179, 8, 0.2);
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            font-style: italic;
+            animation: fadeInUp 0.8s ease-out 0.2s backwards;
+        }
+
+        .divider {
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(to right, transparent, var(--gold), transparent);
+            margin: 1.5rem auto;
+            animation: fadeInUp 0.8s ease-out 0.3s backwards;
+        }
+
+        /* Collections Grid */
+        .collections-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem 5% 5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .collections-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .collection-card {
+            background: rgba(30, 41, 59, 0.6);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-lg);
+            transition: var(--transition);
+            animation: fadeInUp 0.8s ease-out backwards;
+        }
+
+        .collection-card:nth-child(1) { animation-delay: 0.05s; }
+        .collection-card:nth-child(2) { animation-delay: 0.1s; }
+        .collection-card:nth-child(3) { animation-delay: 0.15s; }
+        .collection-card:nth-child(4) { animation-delay: 0.2s; }
+        .collection-card:nth-child(5) { animation-delay: 0.25s; }
+        .collection-card:nth-child(6) { animation-delay: 0.3s; }
+
+        .collection-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.6), 0 0 30px rgba(234, 179, 8, 0.2);
+            border-color: var(--gold);
+        }
+
+        .collection-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, var(--bg-slate), var(--bg-dark));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .collection-card:hover .product-img {
+            transform: scale(1.05);
+        }
+
+        .collection-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--gold);
+            color: var(--bg-dark);
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .collection-info {
+            padding: 1.5rem;
+        }
+
+        .collection-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .collection-desc {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            min-height: 45px;
+        }
+
+        .collection-price {
+            color: var(--gold);
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .collection-btn {
+            width: 100%;
+            padding: 0.9rem;
+            background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+            color: var(--bg-dark);
+            border: none;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .collection-btn:hover {
+            filter: brightness(1.15);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(234, 179, 8, 0.4);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 2rem 5%;
+            background: rgba(2, 6, 23, 0.9);
+            border-top: 1px solid rgba(234, 179, 8, 0.2);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+
+            .page-header p {
+                font-size: 1rem;
+            }
+
+            .collections-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+
+            .nav-logo-text {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-header {
+                padding: 3rem 5% 2rem;
+            }
+
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .navbar {
+                padding: 0.8rem 5%;
+            }
+
+            .collections-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="index.html" class="nav-logo">
+            <img src="logo.png" alt="FahiJawz Collection Logo">
+            <span class="nav-logo-text">FahiJawz</span>
+        </a>
+        <a href="index.html" class="nav-back">
+            <span>←</span>
+            <span>Back to Home</span>
+        </a>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <h1>Our Collections</h1>
+        <div class="divider"></div>
+        <p>Discover 47 unique handcrafted pieces that blend tradition with modern style</p>
+    </header>
+
+    <!-- Collections Grid -->
+    <div class="collections-container">
+        <div class="collections-grid">
+            <!-- Product 1 -->
+            <div class="collection-card">
+                <div class="collection-image">
+                    <img src="images/asset_1772221724_%23B-1.png" alt="Product #B-1" class="product-img">
+                    <span class="collection-badge">#B-1</span>
+                </div>
+                <div class="collection-info">
+                    <h3 class="collection-title">Product #B-1</h3>
+                    <p class="collection-desc">Premium handcrafted quality</p>
+                    <p class="collection-price">৳160</p>
+                    <a href="https://www.facebook.com/FahiJawzCollection" target="_blank" rel="noopener" class="collection-btn">Order Now</a>
+                </div>
+            </div>
+            <!-- Product 2 -->
+            <div class="collection-card">
+                <div class="collection-image">
+                    <img src="images/asset_1772221752_%23B-1.1.png" alt="Product #B-1.1" class="product-img">
+                    <span class="collection-badge">#B-1.1</span>
+                </div>
+                <div class="collection-info">
+                    <h3 class="collection-title">Product #B-1.1</h3>
+                    <p class="collection-desc">Premium handcrafted quality</p>
+                    <p class="collection-price">৳160</p>
+                    <a href="https://www.facebook.com/FahiJawzCollection" target="_blank" rel="noopener" class="collection-btn">Order Now</a>
+                </div>
+            </div>
+            <!-- Product 3 -->
+            <div class="collection-card">
+                <div class="collection-image">
+                    <img src="images/asset_1772221815_%23B-2.png" alt="Product #B-2" class="product-img">
+                    <span class="collection-badge">#B-2</span>
+                </div>
+                <div class="collection-info">
+                    <h3 class="collection-title">Product #B-2</h3>
+                    <p class="collection-desc">Premium handcrafted quality</p>
+                    <p class="collection-price">৳75</p>
+                    <a href="https://www.facebook.com/FahiJawzCollection" target="_blank" rel="noopener" class="collection-btn">Order Now</a>
+                </div>
+            </div>
+            <!-- Product 4 -->
+            <div class="collection-card">
+                <div class="collection-image">
+                    <img src="images/asset_1772221859_%23B-2.1.png" alt="Product #B-2.1" class="product-img">
+                    <span class="collection-badge">#B-2.1</span>
+                </div>
+                <div class="collection-info">
+                    <h3 class="collection-title">Product #B-2.1</h3>
+                    <p class="collection-desc">Premium handcrafted quality</p>
+                    <p class="collection-price">৳75</p>
+                    <a href="https://www.facebook.com/FahiJawzCollection" target="_blank" rel="noopener" class="collection-btn">Order Now</a>
+                </div>
+            </div>
+            <!-- Product 5 -->
+            <div class="collection-card">
+                <div class="collection-image">
+                    <img src="images/asset_1772221938_%23B-3.png" alt="Product #B-3" class="product-img">
+                    <span class="collection-badge">#B-3</span>
+                </div>
+                <div class="collection-info">
+                    <h3 class="collection-title">Product #B-3</h3>
+                    <p class="collection-desc">White+Green</p>
+                    <p class="collection-price">৳380</p>
+                    <a href="https://www.facebook.com/FahiJawzCollection" target="_blank" rel="noopener" class="collection-btn">Order Now</a>
+                </div>
+            </div>
+            <!-- Product 6 -->
+            <div class="collection-card">
+                <div class="collection-image">
+                    <img src="images/asset_1772221994_%23B-3.1.png" alt="Product #B-3.1" class="product-img">
+                    <span class="collection-badge">#B-3.1</span>
+                </div>
+                <div class="collection-info">
+                    <h3 class="collection-title">Product #B-3.1</h3>
+                    <p class="collection-desc">Black</p>
+                    <p class="collection-price">৳360</p>
+                    <a href="https://www.facebook.com/FahiJawzCollection" target="_blank" rel="noopener" class="collection-btn">Order Now</a>
+                </div>
+            </div>
+            <!-- Product 7 -->
+            <div class="collection-card">
+                <div class="collection-image">
+                    <img src="images/asset_1772222040_%23B-3.2.png" alt="Product #B-3.2" class="product-img">
+                    <span class="collection-badge">#B-3.2</span>
+                </div>
+                <div class="collection-info">
+                    <h3 class="collection-title">Product #B-3.2</h3>
+                    <p class="collection-desc">Red</p>
+                    <p class="collection-price">৳340</p>
+                    <a href="https://www.facebook.com/FahiJawzCollection" target="_blank" rel="noopener" class="collection-btn">Order Now</a>
+                </div>
+            </div>
+            <!-- Product 8 -->
+            <div class="collection-card">
+                <div class="collection-image">
+                    <img src="images/asset_1772222097_%23BK-4.png" alt="Product #BK-4" class="product-img">
+                    <span class="collection-badge">#BK-4</span>
+                </div>
+                <div class="collection-info">
+                    <h3 class="collection-title">Product #BK-4</h3>
+                    <p class="collection-desc">Premium handcrafted quality</p>
+                    <p class="collection-price">৳99</p>
+                    <a href="https://www.facebook.com/FahiJawzCollection" target="_blank" rel="noopener" class="collection-btn">Order Now</a>
+                </div>
+            </div>
+            <!-- Product 9 -->
+            <div class="collection-card">
+                <div class="collection-image">
+                    <img src="images/asset_1772222148_%23BC-5.png" alt="Product #BC-5" class="product-img">
+                    <span class="collection-badge">#BC-5</span>
+                </div>
+                <div class="collection-info">
+                    <h3 class="collection-title">Product #BC-5</h3>
+                    <p class="collection-desc">Premium handcrafted quality</p>
+                    <p class="collection-price">৳99</p>
+                    <a href="https://www.facebook.com/FahiJawzCollection" target="_blank" rel="noopener" class="collection-btn">Order Now</a>
+                </div>
+            </div>
+            <!-- Product 10 -->
+            <div class="collection-card">
+                <div class="collection-image">
+                    <img src="images/asset_1772222197_%23BSCS-6.png" alt="Product #BSCS-6" class="product-img">
+                    <span class="collection-badge">#BSCS-6</span>
+                </div>
+                <div class="collection-info">
+                    <h3 class="collection-title">Product #BSCS-6</h3>
+                    <p class="collection-desc">Premium handcrafted quality</p>
+                    <p class="collection-price">৳105</p>
+                    <a href="https://www.facebook.com/FahiJawzCollection" target="_blank" rel="noopener" class="collection-btn">Order Now</a>
+                </div>
+            </div>
+            <!-- Product 11 -->
+            <div class="collection-card">
+                <div class="collection-image">
+                    <img src="images/asset_1772222249_%23C-1.png" alt="Product #C-1" class="product-img">
+                    <span class="collection-badge">#C-1</span>
+                </div>
+                <div class="collection-info">
+                    <h3 class="collection-title">Product #C-1</h3>
+                    <p class="collection-desc">Premium handcrafted quality</p>
+                    <p class="collection-price">৳98</p>
+                    <a href="https://www.facebook.com/FahiJawzCollection" target="_blank" rel="noopener" class="collection-btn">Order Now</a>
+                </div>
+            </div>
+            <!-- Product 12 -->
+            <div class="collection-card">
+                <div class="collection-image">
+                    <img src="images/asset_1772222302_%23CPSTB-2.png" alt="Product #CPSTB-2" class="product-img">
+                    <span class="collection-badge">#CPSTB-2</span>
+                </div>
+                <div class="collection-info">
+                    <h3 class="collection-title">Product #CPSTB-2</h3>
+                    <p class="collection-desc">Premium handcrafted quality</p>
+                    <p class="collection-price">৳210</p>
+                    <a href="https://www.facebook.com/FahiJawzCollection" target="_blank" rel="noopener" class="collection-btn">Order Now</a>
+                </div>
+            </div>
+            <!-- Product 13 -->
+            <div class="collection-card">
+                <div class="collection-image">
+                    <img src="images/asset_1772222368_%23CPSTW-2.1.png" alt="Product #CPSTW-2.1" class="product-img">
+                    <span class="collection-badge">#CPSTW-2.1</span>
+                </div>
+                <div class="collection-info">
+                    <h3 class="collection-title">Product #CPSTW-2.1</h3>
+                    <p class="collection-desc">Premium handcrafted quality</p>
+                    <p class="collection-price">৳160</p>
+                    <a href="https://www.facebook.com/FahiJawzCollection" target="_blank" rel="noopener" class="collection-btn">Order Now</a>
+                </div>
+            </div>
+            <!-- Product 14 -->
+            <div class="collection-card">
+                <div class="collection-image">
+                    <img src="images/asset_1772222452_%23CB-3.png" alt="Product #CB-3" class="product-img">
+                    <span class="collection-badge">#CB-3</span>
+                </div>
+                <div class="collection-info">
+                    <h3 class="collection-title">Product #CB-3</h3>
+                    <p class="collection-desc">custom orders</p>
+                    <p class="collection-price">৳0</p>
+                    <a href="https://www.facebook.com/FahiJawzCollection" target="_blank" rel="noopener" class="collection-btn">Order Now</a>
+                </div>
+            </div>
+            <!-- Product 15 -->
+            <div class="collection-card">
+                <div class="collection-image">
+                    <img src="images/asset_1772222501_%23CPKW-4.png" alt="Product #CPKW-4" class="product-img">
+                    <span class="collection-badge">#CPKW-4</span>
+                </div>
+                <div class="collection-info">
+                    <h3 class="collection-title">Product #CPKW-4</h3>
+                    <p class="collection-desc">Premium handcrafted quality</p>
+                    <p class="collection-price">৳176</p>
+                    <a href="https://www.facebook.com/FahiJawzCollection" target="_blank" rel="noopener" class="collection-btn">Order Now</a>
+                </div>
+            </div>
+            <!-- Product 16 -->
+            <div class="collection-card">
+                <div class="collection-image">
+                    <img src="images/asset_1772222550_%23CC-5.png" alt="Product #CC-5" class="product-img">
+                    <span class="collection-badge">#CC-5</span>
+                </div>
+                <div class="collection-info">
+                    <h3 class="collection-title">Product #CC-5</h3>
+                    <p class="collection-desc">Premium handcrafted quality</p>
+                    <p class="collection-price">৳99</p>
+                    <a href="https://www.facebook.com/FahiJawzCollection" target="_blank" rel="noopener" class="collection-btn">Order Now</a>
+                </div>
+            </div>
+            <!-- Product 17 -->
+            <div class="collection-card">
+                <div class="collection-image">
+                    <img src="images/asset_1772222718_%23CFKYW-6.png" alt="Product #CFKYW-6" class="product-img">
+                    <span class="collection-badge">#CFKYW-6</span>
+                </div>
+                <div class="collection-info">
+                    <h3 class="collection-title">Product #CFKYW-6</h3>
+                    <p class="collection-desc">Premium handcrafted quality</p>
+                    <p class="collection-price">৳105</p>
+                    <a href="https://www.facebook.com/FahiJawzCollection" target="_blank" rel="noopener" class="collection-btn">Order Now</a>
+                </div>
+            </div>
+            <!-- Product 18 -->
+            <div class="collection-card">
+                <div class="collection-image">
+                    <img src="images/asset_1772222863_%23CS-7.jpeg" alt="Product #CS-7" class="product-img">
+                    <span class="collection-badge">#CS-7</span>
+                </div>
+                <div class="collection-info">
+                    <h3 class="collection-title">Product #CS-7</h3>
+                    <p class="collection-desc">Premium handcrafted quality</p>
+                    <p class="collection-price">৳150</p>
+                    <a href="https://www.facebook.com/FahiJawzCollection" target="_blank" rel="noopener" class="collection-btn">Order Now</a>
+                </div>
+            </div>
+            <!-- Product 19 -->
+            <div class="collection-card">
+                <div class="collection-image">
+                    <img src="images/asset_1772222910_%23FDP-1.png" alt="Product #FDP-1" class="product-img">
+                    <span class="collection-badge">#FDP-1</span>
+                </div>
+                <div class="collection-info">
+                    <h3 class="collection-title">Product #FDP-1</h3>
+                    <p class="collection-desc">Premium handcrafted quality</p>
+                    <p class="collection-price">৳465</p>
+                    <a href="https://www.facebook.com/FahiJawzCollection" target="_blank" rel="noopener" class="collection-btn">Order Now</a>
+                </div>
+            </div>
+            <!-- Product 20 -->
+            <div class="collection-card">
+                <div class="collection-image">
+                    <img src="images/asset_1772222958_%23FDP-1.1.png" alt="Product #FDP-1.1" class="product-img">
+                    <span class="collection-badge">#FDP-1.1</span>
+                </div>
+                <div class="collection-info">
+                    <h3 class="collection-title">Product #FDP-1.1</h3>
+                    <p class="collection-desc">Premium handcrafted quality</p>
+                    <p class="collection-price">৳465</p>
+                    <a href="https://www.facebook.com/FahiJawzCollection" target="_blank" rel="noopener" class="collection-btn">Order Now</a>
+                </div>
+            </div>
+            <!-- Product 21 -->
+            <div class="collection-card">
+                <div class="collection-image">
+                    <img src="images/asset_1772223004_%23G-1.png" alt="Product #G-1" class="product-img">
+                    <span class="collection-badge">#G-1</span>
+                </div>
+                <div class="collection-info">
+                    <h3 class="collection-title">Product #G-1</h3>
+                    <p class="collection-desc">Premium handcrafted quality</p>
+                    <p class="collection-price">৳255</p>
+                    <a href="https://www.facebook.com/FahiJawzCollection" target="_blank" rel="noopener" class="collection-btn">Order Now</a>
+                </div>
+            </div>
+            <!-- Product 22 -->
+            <div class="collection-card">
+                <div class="collection-image">
+                    <img src="images/asset_1772223083_%23G-2.png" alt="Product #G-2" class="product-img">
+                    <span class="collection-badge">#G-2</span>
+                </div>
+                <div class="collection-info">
+                    <h3 class="collection-title">Product #G-2</h3>
+                    <p class="collection-desc">Premium handcrafted quality</p>
+                    <p class="collection-price">৳256</p>
+                    <a href="https://www.facebook.com/FahiJawzCollection" target="_blank" rel="noopener" class="collection-btn">Order Now</a>
+                </div>
+            </div>
+            <!-- Product 23 -->
+            <div class="collection-card">
+                <div class="collection-image">
+                    <img src="images/asset_1772223124_%23G-3.png" alt="Product #G-3" class="product-img">
+                    <span class="collection-badge">#G-3</span>
+                </div>
+                <div class="collection-info">
+                    <h3 class="collection-title">Product #G-3</h3>
+                    <p class="collection-desc">Premium handcrafted quality</p>
+                    <p class="collection-price">৳300</p>
+                    <a href="https://www.facebook.com/FahiJawzCollection" target="_blank" rel="noopener" class="collection-btn">Order Now</a>
+                </div>
+            </div>
+            <!-- Product 24 -->
+            <div class="collection-card">
+                <div class="collection-image">
+                    <img src="images/asset_1772223169_%23G-4.png" alt="Product #G-4" class="product-img">
+                    <span class="collection-badge">#G-4</span>
+                </div>
+                <div class="collection-info">
+                    <h3 class="collection-title">Product #G-4</h3>
+                    <p class="collection-desc">Premium handcrafted quality</p>
+                    <p class="collection-price">৳272</p>
+                    <a href="https://www.facebook.com/FahiJawzCollection" target="_blank" rel="noopener" class="collection-btn">Order Now</a>
+                </div>
+            </div>
+            <!-- Product 25 -->
+            <div class="collection-card">
+                <div class="collection-image">
+                    <img src="images/asset_1772223205_%23G-5.png" alt="Product #G-5" class="product-img">
+                    <span class="collection-badge">#G-5</span>
+                </div>
+                <div class="collection-info">
+                    <h3 class="collection-title">Product #G-5</h3>
+                    <p class="collection-desc">Premium handcrafted quality</p>
+                    <p class="collection-price">৳400</p>
+                    <a href="https://www.facebook.com/FahiJawzCollection" target="_blank" rel="noopener" class="collection-btn">Order Now</a>
+                </div>
+            </div>
+            <!-- Product 26 -->
+            <div class="collection-card">
+                <div class="collection-image">
+                    <img src="images/asset_1772223259_%23H-1.png" alt="Product #H-1" class="product-img">
+                    <span class="collection-badge">#H-1</span>
+                </div>
+                <div class="collection-info">
+                    <h3 class="collection-title">Product #H-1</h3>
+                    <p class="collection-desc">Small Size</p>
+                    <p class="collection-price">৳559</p>
+                    <a href="https://www.facebook.com/FahiJawzCollection" target="_blank" rel="noopener" class="collection-btn">Order Now</a>
+                </div>
+            </div>
+            <!-- Product 27 -->
+            <div class="collection-card">
+                <div class="collection-image">
+                    <img src="images/asset_1772223309_%23H-2.png" alt="Product #H-2" class="product-img">
+                    <span class="collection-badge">#H-2</span>
+                </div>
+                <div class="collection-info">
+                    <h3 class="collection-title">Product #H-2</h3>
+                    <p class="collection-desc">Big Size</p>
+                    <p class="collection-price">৳855</p>
+                    <a href="https://www.facebook.com/FahiJawzCollection" target="_blank" rel="noopener" class="collection-btn">Order Now</a>
+                </div>
+            </div>
+            <!-- Product 28 -->
+            <div class="collection-card">
+                <div class="collection-image">
+                    <img src="images/asset_1772223366_%23HCSD-3.png" alt="Product #HCSD-3" class="product-img">
+                    <span class="collection-badge">#HCSD-3</span>
+                </div>
+                <div class="collection-info">
+                    <h3 class="collection-title">Product #HCSD-3</h3>
+                    <p class="collection-desc">Premium handcrafted quality</p>
+                    <p class="collection-price">৳680</p>
+                    <a href="https://www.facebook.com/FahiJawzCollection" target="_blank" rel="noopener" class="collection-btn">Order Now</a>
+                </div>
+            </div>
+            <!-- Product 29 -->
+            <div class="collection-card">
+                <div class="collection-image">
+                    <img src="images/asset_1772223403_%23HCSD-4.png" alt="Product #HCSD-4" class="product-img">
+                    <span class="collection-badge">#HCSD-4</span>
+                </div>
+                <div class="collection-info">
+                    <h3 class="collection-title">Product #HCSD-4</h3>
+                    <p class="collection-desc">Premium handcrafted quality</p>
+                    <p class="collection-price">৳900</p>
+                    <a href="https://www.facebook.com/FahiJawzCollection" target="_blank" rel="noopener" class="collection-btn">Order Now</a>
+                </div>
+            </div>
+            <!-- Product 30 -->
+            <div class="collection-card">
+                <div class="collection-image">
+                    <img src="images/asset_1772223446_%23P-1.png" alt="Product #P-1" class="product-img">
+                    <span class="collection-badge">#P-1</span>
+                </div>
+                <div class="collection-info">
+                    <h3 class="collection-title">Product #P-1</h3>
+                    <p class="collection-desc">Premium handcrafted quality</p>
+                    <p class="collection-price">৳150</p>
+                    <a href="https://www.facebook.com/FahiJawzCollection" target="_blank" rel="noopener" class="collection-btn">Order Now</a>
+                </div>
+            </div>
+            <!-- Product 31 -->
+            <div class="collection-card">
+                <div class="collection-image">
+                    <img src="images/asset_1772223519_%23P-2.png" alt="Product #P-2" class="product-img">
+                    <span class="collection-badge">#P-2</span>
+                </div>
+                <div class="collection-info">
+                    <h3 class="collection-title">Product #P-2</h3>
+                    <p class="collection-desc">12 Inch = 340
+10 Inch =299
+6 Inch   =150
+4 Inch   =99</p>
+                    <p class="collection-price">৳340</p>
+                    <a href="https://www.facebook.com/FahiJawzCollection" target="_blank" rel="noopener" class="collection-btn">Order Now</a>
+                </div>
+            </div>
+            <!-- Product 32 -->
+            <div class="collection-card">
+                <div class="collection-image">
+                    <img src="images/asset_1772223847_%23P-3.png" alt="Product #P-3" class="product-img">
+                    <span class="collection-badge">#P-3</span>
+                </div>
+                <div class="collection-info">
+                    <h3 class="collection-title">Product #P-3</h3>
+                    <p class="collection-desc">12 Inch = 340
+10 Inch =299
+6 Inch   =150
+4 Inch   =99</p>
+                    <p class="collection-price">৳340</p>
+                    <a href="https://www.facebook.com/FahiJawzCollection" target="_blank" rel="noopener" class="collection-btn">Order Now</a>
+                </div>
+            </div>
+            <!-- Product 33 -->
+            <div class="collection-card">
+                <div class="collection-image">
+                    <img src="images/asset_1772223975_%23S-1.png" alt="Product #S-1" class="product-img">
+                    <span class="collection-badge">#S-1</span>
+                </div>
+                <div class="collection-info">
+                    <h3 class="collection-title">Product #S-1</h3>
+                    <p class="collection-desc">With Flower 150
+Without Flower 120</p>
+                    <p class="collection-price">৳150</p>
+                    <a href="https://www.facebook.com/FahiJawzCollection" target="_blank" rel="noopener" class="collection-btn">Order Now</a>
+                </div>
+            </div>
+            <!-- Product 34 -->
+            <div class="collection-card">
+                <div class="collection-image">
+                    <img src="images/asset_1772224113_%23S-1.1.png" alt="Product #S-1.1" class="product-img">
+                    <span class="collection-badge">#S-1.1</span>
+                </div>
+                <div class="collection-info">
+                    <h3 class="collection-title">Product #S-1.1</h3>
+                    <p class="collection-desc">With Flower 150
+Without Flower 120</p>
+                    <p class="collection-price">৳150</p>
+                    <a href="https://www.facebook.com/FahiJawzCollection" target="_blank" rel="noopener" class="collection-btn">Order Now</a>
+                </div>
+            </div>
+            <!-- Product 35 -->
+            <div class="collection-card">
+                <div class="collection-image">
+                    <img src="images/asset_1772224158_%23S-1.2.png" alt="Product #S-1.2" class="product-img">
+                    <span class="collection-badge">#S-1.2</span>
+                </div>
+                <div class="collection-info">
+                    <h3 class="collection-title">Product #S-1.2</h3>
+                    <p class="collection-desc">With Flower 150
+Without Flower 120</p>
+                    <p class="collection-price">৳150</p>
+                    <a href="https://www.facebook.com/FahiJawzCollection" target="_blank" rel="noopener" class="collection-btn">Order Now</a>
+                </div>
+            </div>
+            <!-- Product 36 -->
+            <div class="collection-card">
+                <div class="collection-image">
+                    <img src="images/asset_1772224247_%23SK-2.png" alt="Product #SK-2" class="product-img">
+                    <span class="collection-badge">#SK-2</span>
+                </div>
+                <div class="collection-info">
+                    <h3 class="collection-title">Product #SK-2</h3>
+                    <p class="collection-desc">Premium handcrafted quality</p>
+                    <p class="collection-price">৳99</p>
+                    <a href="https://www.facebook.com/FahiJawzCollection" target="_blank" rel="noopener" class="collection-btn">Order Now</a>
+                </div>
+            </div>
+            <!-- Product 37 -->
+            <div class="collection-card">
+                <div class="collection-image">
+                    <img src="images/asset_1772538015_%23AHRGWD-1.png" alt="Product #AHRGWD-1" class="product-img">
+                    <span class="collection-badge">#AHRGWD-1</span>
+                </div>
+                <div class="collection-info">
+                    <h3 class="collection-title">Product #AHRGWD-1</h3>
+                    <p class="collection-desc">Coustom Order</p>
+                    <p class="collection-price">৳500</p>
+                    <a href="https://www.facebook.com/FahiJawzCollection" target="_blank" rel="noopener" class="collection-btn">Order Now</a>
+                </div>
+            </div>
+            <!-- Product 38 -->
+            <div class="collection-card">
+                <div class="collection-image">
+                    <img src="images/asset_1772538183_%23LDPG-1.png" alt="Product #LDPG-1" class="product-img">
+                    <span class="collection-badge">#LDPG-1</span>
+                </div>
+                <div class="collection-info">
+                    <h3 class="collection-title">Product #LDPG-1</h3>
+                    <p class="collection-desc">Pre-Oder</p>
+                    <p class="collection-price">৳260</p>
+                    <a href="https://www.facebook.com/FahiJawzCollection" target="_blank" rel="noopener" class="collection-btn">Order Now</a>
+                </div>
+            </div>
+            <!-- Product 39 -->
+            <div class="collection-card">
+                <div class="collection-image">
+                    <img src="images/asset_1772538328_%23FDPS-2.png" alt="Product #FDPS-2" class="product-img">
+                    <span class="collection-badge">#FDPS-2</span>
+                </div>
+                <div class="collection-info">
+                    <h3 class="collection-title">Product #FDPS-2</h3>
+                    <p class="collection-desc">Pre-Oder</p>
+                    <p class="collection-price">৳230</p>
+                    <a href="https://www.facebook.com/FahiJawzCollection" target="_blank" rel="noopener" class="collection-btn">Order Now</a>
+                </div>
+            </div>
+            <!-- Product 40 -->
+            <div class="collection-card">
+                <div class="collection-image">
+                    <img src="images/asset_1772538293_%23FDPRP-3.png" alt="Product #FDPRP-3" class="product-img">
+                    <span class="collection-badge">#FDPRP-3</span>
+                </div>
+                <div class="collection-info">
+                    <h3 class="collection-title">Product #FDPRP-3</h3>
+                    <p class="collection-desc">Pre-Order</p>
+                    <p class="collection-price">৳230</p>
+                    <a href="https://www.facebook.com/FahiJawzCollection" target="_blank" rel="noopener" class="collection-btn">Order Now</a>
+                </div>
+            </div>
+            <!-- Product 41 -->
+            <div class="collection-card">
+                <div class="collection-image">
+                    <img src="images/asset_1772538259_%23FDPP-4.png" alt="Product #FDPP-4" class="product-img">
+                    <span class="collection-badge">#FDPP-4</span>
+                </div>
+                <div class="collection-info">
+                    <h3 class="collection-title">Product #FDPP-4</h3>
+                    <p class="collection-desc">Pre-Oder</p>
+                    <p class="collection-price">৳220</p>
+                    <a href="https://www.facebook.com/FahiJawzCollection" target="_blank" rel="noopener" class="collection-btn">Order Now</a>
+                </div>
+            </div>
+            <!-- Product 42 -->
+            <div class="collection-card">
+                <div class="collection-image">
+                    <img src="images/asset_1772560324_%23KFR-1.png" alt="Product #KFR-1" class="product-img">
+                    <span class="collection-badge">#KFR-1</span>
+                </div>
+                <div class="collection-info">
+                    <h3 class="collection-title">Product #KFR-1</h3>
+                    <p class="collection-desc">Premium handcrafted quality</p>
+                    <p class="collection-price">৳99</p>
+                    <a href="https://www.facebook.com/FahiJawzCollection" target="_blank" rel="noopener" class="collection-btn">Order Now</a>
+                </div>
+            </div>
+            <!-- Product 43 -->
+            <div class="collection-card">
+                <div class="collection-image">
+                    <img src="images/asset_1773397681_%23RG-1.png" alt="Product #RG-1" class="product-img">
+                    <span class="collection-badge">#RG-1</span>
+                </div>
+                <div class="collection-info">
+                    <h3 class="collection-title">Product #RG-1</h3>
+                    <p class="collection-desc">Coming Soon</p>
+                    <p class="collection-price">৳0</p>
+                    <a href="https://www.facebook.com/FahiJawzCollection" target="_blank" rel="noopener" class="collection-btn">Order Now</a>
+                </div>
+            </div>
+            <!-- Product 44 -->
+            <div class="collection-card">
+                <div class="collection-image">
+                    <img src="images/asset_1773397736_%23RG-2.png" alt="Product #RG-2" class="product-img">
+                    <span class="collection-badge">#RG-2</span>
+                </div>
+                <div class="collection-info">
+                    <h3 class="collection-title">Product #RG-2</h3>
+                    <p class="collection-desc">Coming Soon</p>
+                    <p class="collection-price">৳0</p>
+                    <a href="https://www.facebook.com/FahiJawzCollection" target="_blank" rel="noopener" class="collection-btn">Order Now</a>
+                </div>
+            </div>
+            <!-- Product 45 -->
+            <div class="collection-card">
+                <div class="collection-image">
+                    <img src="images/asset_1773397778_%23RG-3.png" alt="Product #RG-3" class="product-img">
+                    <span class="collection-badge">#RG-3</span>
+                </div>
+                <div class="collection-info">
+                    <h3 class="collection-title">Product #RG-3</h3>
+                    <p class="collection-desc">Coming Soon</p>
+                    <p class="collection-price">৳0</p>
+                    <a href="https://www.facebook.com/FahiJawzCollection" target="_blank" rel="noopener" class="collection-btn">Order Now</a>
+                </div>
+            </div>
+            <!-- Product 46 -->
+            <div class="collection-card">
+                <div class="collection-image">
+                    <img src="images/asset_1773397809_%23RG-4.png" alt="Product #RG-4" class="product-img">
+                    <span class="collection-badge">#RG-4</span>
+                </div>
+                <div class="collection-info">
+                    <h3 class="collection-title">Product #RG-4</h3>
+                    <p class="collection-desc">Coming Soon</p>
+                    <p class="collection-price">৳0</p>
+                    <a href="https://www.facebook.com/FahiJawzCollection" target="_blank" rel="noopener" class="collection-btn">Order Now</a>
+                </div>
+            </div>
+            <!-- Product 47 -->
+            <div class="collection-card">
+                <div class="collection-image">
+                    <img src="images/asset_1773397837_%23RG-5.png" alt="Product #RG-5" class="product-img">
+                    <span class="collection-badge">#RG-5</span>
+                </div>
+                <div class="collection-info">
+                    <h3 class="collection-title">Product #RG-5</h3>
+                    <p class="collection-desc">Coming Soon</p>
+                    <p class="collection-price">৳0</p>
+                    <a href="https://www.facebook.com/FahiJawzCollection" target="_blank" rel="noopener" class="collection-btn">Order Now</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 FahiJawz Collection. All Rights Reserved.</p>
+    </footer>
+</body>
+
+</html>
