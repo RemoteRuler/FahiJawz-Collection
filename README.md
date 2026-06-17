@@ -25,7 +25,6 @@
 ## 🛠️ Technology Stack
 
 - **Frontend:** HTML5, CSS3 (Variables, Animations, Glassmorphism), Vanilla JavaScript (DOM manipulation, Security logic)
-- **Database:** SQLite (`products.db`) for catalog management.
 - **Typography:** Google Fonts (`Playfair Display`, `Inter`).
 
 ## 🚀 Live Preview
@@ -37,11 +36,8 @@ Experience the FahiJawz Collection live:
 
 ```text
 FahiJawz-Collection/
-├── images/               # High-resolution product assets
-├── collections.html      # Dynamic catalog page displaying 47 unique items
 ├── index.html            # Main landing page with modals and anti-copy protection
 ├── logo.png              # Official brand logo
-├── products.db           # SQLite database holding product data
 ├── README.md             # Project documentation
 └── LICENSE               # Proprietary legal agreement
 ```

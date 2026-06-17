@@ -11,19 +11,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-dark: #0f172a;
-            --bg-slate: #1e293b;
-            --bg-card: rgba(30, 41, 59, 0.6);
-            --gold: #eab308;
-            --gold-light: #fde047;
-            --gold-dark: #ca8a04;
-            --rose: #ec4899;
-            --text-light: #f8fafc;
-            --text-muted: #94a3b8;
-            --border-light: rgba(255, 255, 255, 0.1);
-            --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-            --shadow-gold: 0 0 30px rgba(234, 179, 8, 0.3);
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --bg-dark: #070a12;
+            --bg-slate: #0f1422;
+            --bg-card: rgba(15, 20, 34, 0.65);
+            --gold: #d4af37;
+            --gold-light: #f3e5ab;
+            --gold-dark: #aa7c11;
+            --text-light: #f9fafb;
+            --text-muted: #8e9cae;
+            --border-light: rgba(255, 255, 255, 0.05);
+            --border-gold: rgba(212, 175, 55, 0.15);
+            --shadow-lg: 0 20px 40px -15px rgba(0, 0, 0, 0.7);
+            --shadow-gold: 0 0 20px rgba(212, 175, 55, 0.15);
+            --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         * {
@@ -34,20 +34,35 @@
             user-select: none;
         }
 
+        /* Styled scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-dark);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--bg-slate);
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--gold-dark);
+        }
+
         body {
-            font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
-            background: linear-gradient(135deg, var(--bg-dark) 0%, #020617 100%);
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background: #05070c;
             color: var(--text-light);
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            text-align: center;
-            padding: 20px;
+            padding: 40px 20px;
             position: relative;
             overflow-x: hidden;
         }
 
+        /* Ambient background glow */
         body::before {
             content: '';
             position: fixed;
@@ -55,8 +70,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(circle at 20% 50%, rgba(234, 179, 8, 0.08) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 50%, rgba(236, 72, 153, 0.08) 0%, transparent 50%);
+            background: radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.04) 0%, transparent 60%);
             z-index: 0;
             pointer-events: none;
         }
@@ -64,22 +78,229 @@
         .container {
             position: relative;
             z-index: 1;
-            max-width: 750px;
+            max-width: 540px;
             width: 100%;
-            padding: 50px 40px;
+            padding: 50px 35px;
             background: var(--bg-card);
             -webkit-backdrop-filter: blur(20px);
             backdrop-filter: blur(20px);
             border-radius: 24px;
             border: 1px solid var(--border-light);
-            box-shadow: var(--shadow-lg), 0 0 60px rgba(234, 179, 8, 0.1);
-            animation: fadeInUp 0.8s ease-out;
+            box-shadow: var(--shadow-lg);
+            animation: fadeInScale 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+            text-align: center;
+            transition: filter 0.5s ease;
         }
 
-        @keyframes fadeInUp {
+        @keyframes fadeInScale {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: scale(0.97) translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        .logo-link {
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 25px;
+        }
+
+        .logo {
+            width: 130px;
+            height: auto;
+            border-radius: 50%;
+            border: 1.5px solid var(--gold);
+            padding: 5px;
+            box-shadow: var(--shadow-gold);
+            transition: var(--transition);
+        }
+
+        .logo:hover {
+            transform: scale(1.04) rotate(1deg);
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.3);
+        }
+
+        h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2.5rem;
+            color: var(--text-light);
+            margin-bottom: 8px;
+            letter-spacing: -0.01em;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--text-light) 40%, var(--gold-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.2;
+        }
+
+        .slogan {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            font-style: italic;
+            margin-bottom: 30px;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+
+        .divider {
+            width: 80px;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--gold), transparent);
+            margin: 0 auto 35px;
+            opacity: 0.4;
+        }
+
+        /* Action Buttons List */
+        .action-list {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-bottom: 35px;
+        }
+
+        .action-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 15px 24px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            text-decoration: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: 'Inter', sans-serif;
+            border: 1px solid transparent;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold) 100%);
+            color: #05070c;
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.15);
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-1.5px);
+            box-shadow: 0 6px 18px rgba(212, 175, 55, 0.25);
+            filter: brightness(1.08);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.02);
+            color: var(--text-light);
+            border: 1px solid var(--border-light);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: var(--border-gold);
+            transform: translateY(-1.5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .action-btn svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
+
+        /* Map Section */
+        .map-section {
+            margin-top: 10px;
+        }
+
+        .map-title {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        .map-title svg {
+            width: 14px;
+            height: 14px;
+            fill: currentColor;
+        }
+
+        .map-container {
+            width: 100%;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--border-light);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            transition: var(--transition);
+        }
+
+        .map-container:hover {
+            border-color: var(--border-gold);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 220px;
+            display: block;
+            border: 0;
+            filter: grayscale(0.4) contrast(1.15) invert(0.9) hue-rotate(180deg);
+            transition: var(--transition);
+        }
+
+        .map-container:hover iframe {
+            filter: none;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 100;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(3, 5, 10, 0.8);
+            -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(12px);
+            animation: fadeInModal 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes fadeInModal {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            background: linear-gradient(135deg, #0f1422 0%, #05070c 100%);
+            margin: 8% auto;
+            padding: 40px 35px;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 500px;
+            text-align: left;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+            border: 1px solid var(--border-gold);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+            animation: slideInModal 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes slideInModal {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
             }
             to {
                 opacity: 1;
@@ -87,288 +308,52 @@
             }
         }
 
-        .logo-link {
-            text-decoration: none;
-            display: inline-block;
-            position: relative;
-        }
-
-        .logo-link::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(234, 179, 8, 0.2) 0%, transparent 70%);
-            animation: pulse 3s ease-in-out infinite;
-            z-index: -1;
-        }
-
-        @keyframes pulse {
-            0%, 100% {
-                transform: translate(-50%, -50%) scale(1);
-                opacity: 0.5;
-            }
-            50% {
-                transform: translate(-50%, -50%) scale(1.1);
-                opacity: 0.8;
-            }
-        }
-
-        .logo {
-            width: 160px;
-            height: auto;
-            margin-bottom: 28px;
-            border-radius: 50%;
-            border: 3px solid var(--gold);
-            padding: 6px;
-            box-shadow: var(--shadow-gold);
-            transition: var(--transition);
-            position: relative;
-        }
-
-        .logo:hover {
-            transform: scale(1.08) rotate(2deg);
-            box-shadow: 0 0 40px rgba(234, 179, 8, 0.5);
-        }
-
-        h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.2rem;
-            color: var(--gold);
-            margin-bottom: 12px;
-            letter-spacing: -0.02em;
-            font-weight: 700;
-            text-shadow: 0 2px 10px rgba(234, 179, 8, 0.2);
-            line-height: 1.2;
-        }
-
-        .slogan {
-            font-size: 1.3rem;
-            color: var(--text-muted);
-            font-style: italic;
-            margin-bottom: 40px;
-            font-weight: 300;
-            letter-spacing: 0.5px;
-            position: relative;
-            display: inline-block;
-        }
-
-        .slogan::before,
-        .slogan::after {
-            content: '✦';
-            color: var(--gold);
-            opacity: 0.5;
-            margin: 0 12px;
-            font-size: 0.9rem;
-        }
-
-        .divider {
-            width: 80px;
-            height: 2px;
-            background: linear-gradient(to right, transparent, var(--gold), transparent);
-            margin: 0 auto 40px;
-        }
-
-        .button-group {
-            display: flex;
-            gap: 14px;
-            justify-content: center;
-            margin-bottom: 24px;
-            flex-wrap: wrap;
-        }
-
-        button {
-            padding: 13px 26px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            border: none;
-            border-radius: 12px;
-            cursor: pointer;
-            transition: var(--transition);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
-            font-family: 'Inter', sans-serif;
-            letter-spacing: 0.3px;
-        }
-
-        .btn-secondary {
-            background-color: var(--bg-slate);
-            color: var(--text-light);
-            border: 1px solid var(--border-light);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn-secondary::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(234, 179, 8, 0.1), transparent);
-            transition: left 0.5s;
-        }
-
-        .btn-secondary:hover::before {
-            left: 100%;
-        }
-
-        .btn-secondary:hover {
-            background-color: #334155;
-            transform: translateY(-3px);
-            border-color: var(--gold);
-            box-shadow: 0 8px 16px rgba(234, 179, 8, 0.2);
-        }
-
-        .view-page-btn {
-            display: inline-block;
-            text-decoration: none;
-            width: 100%;
-            max-width: 320px;
-            margin: 0 auto;
-        }
-
-        .view-page-btn button {
-            background: linear-gradient(135deg, var(--gold-dark), var(--gold), var(--gold-light));
-            background-size: 200% 200%;
-            color: #000;
-            width: 100%;
-            padding: 16px;
-            font-size: 1.05rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 700;
-            animation: gradientShift 3s ease infinite;
-        }
-
-        @keyframes gradientShift {
-            0%, 100% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-        }
-
-        .view-page-btn button:hover {
-            filter: brightness(1.15);
-            transform: translateY(-3px);
-            box-shadow: 0 12px 24px -4px rgba(234, 179, 8, 0.5);
-        }
-
-        .map-container {
-            margin-top: 36px;
-            width: 100%;
-            border-radius: 16px;
-            overflow: hidden;
-            border: 1px solid var(--border-light);
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
-            transition: var(--transition);
-        }
-
-        .map-container:hover {
-            box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.4), 0 0 20px rgba(234, 179, 8, 0.1);
-        }
-
-        .map-container iframe {
-            width: 100%;
-            height: 320px;
-            display: block;
-        }
-
-        /* Modal Styles */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 50;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(2, 6, 23, 0.85);
-            -webkit-backdrop-filter: blur(12px);
-            backdrop-filter: blur(12px);
-            animation: fadeIn 0.3s ease;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        .modal-content {
-            background: linear-gradient(135deg, var(--bg-slate) 0%, var(--bg-dark) 100%);
-            margin: 5% auto;
-            padding: 40px;
-            border-radius: 24px;
-            width: 90%;
-            max-width: 650px;
-            text-align: left;
-            max-height: 85vh;
-            overflow-y: auto;
-            position: relative;
-            border: 1px solid var(--border-light);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
-            animation: slideIn 0.4s ease;
-        }
-
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateY(-50px) scale(0.95);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
-        }
-
         .close {
             position: absolute;
-            right: 24px;
+            right: 20px;
             top: 20px;
-            font-size: 32px;
             color: var(--text-muted);
             cursor: pointer;
             transition: var(--transition);
-            width: 40px;
-            height: 40px;
+            width: 32px;
+            height: 32px;
             display: flex;
             align-items: center;
             justify-content: center;
             border-radius: 50%;
+            border: 1px solid var(--border-light);
+            background: rgba(255, 255, 255, 0.01);
+            font-size: 1.1rem;
         }
 
         .close:hover {
             color: var(--gold);
-            background: rgba(234, 179, 8, 0.1);
+            border-color: var(--gold);
+            background: rgba(212, 175, 55, 0.06);
             transform: rotate(90deg);
         }
 
         h2 {
-            color: var(--gold);
-            margin-bottom: 24px;
-            font-size: 2rem;
             font-family: 'Playfair Display', serif;
+            color: var(--gold);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            font-weight: 600;
         }
 
         h4 {
             margin-top: 24px;
-            color: var(--rose);
-            font-size: 1.1rem;
+            color: var(--gold-light);
+            font-size: 1rem;
             font-weight: 600;
+            margin-bottom: 6px;
         }
 
-        p,
-        li {
-            font-size: 1rem;
-            line-height: 1.8;
+        p, li {
+            font-size: 0.9rem;
+            line-height: 1.7;
             color: var(--text-muted);
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         ul {
@@ -376,45 +361,31 @@
         }
 
         footer {
-            position: fixed;
-            bottom: 20px;
-            width: 100%;
-            text-align: center;
-            font-size: 0.85rem;
+            margin-top: 40px;
+            font-size: 0.8rem;
             color: var(--text-muted);
-            opacity: 0.6;
-            z-index: 10;
+            opacity: 0.4;
         }
 
-        @media (max-width: 640px) {
+        /* Security focus-blur utility */
+        .content-protected {
+            filter: blur(8px);
+            pointer-events: none;
+        }
+
+        /* Responsive design */
+        @media (max-width: 480px) {
+            .container {
+                padding: 40px 20px;
+            }
+
             h1 {
-                font-size: 2.4rem;
+                font-size: 2.1rem;
             }
 
             .slogan {
-                font-size: 1.1rem;
+                font-size: 1rem;
             }
-
-            .container {
-                padding: 32px 24px;
-            }
-
-            .logo {
-                width: 140px;
-            }
-
-            .button-group {
-                flex-direction: column;
-            }
-
-            button {
-                width: 100%;
-            }
-        }
-
-        .content-protected {
-            filter: blur(5px);
-            pointer-events: none;
         }
     </style>
 </head>
@@ -422,67 +393,75 @@
 <body>
 
     <div class="container">
-        <a href="https://www.facebook.com/FahiJawzCollection" target="_blank" rel="noopener"
-            class="logo-link">
+        <a href="https://www.facebook.com/FahiJawzCollection" target="_blank" rel="noopener" class="logo-link">
             <img src="logo.png" alt="FahiJawz Collection Logo" class="logo">
         </a>
         <h1>FahiJawz Collection</h1>
-        <p class="slogan">Where Tradition Meets Trend</p>
+        <div class="slogan">Where Tradition Meets Trend</div>
         <div class="divider"></div>
 
-        <div class="button-group">
-            <button class="btn-secondary" onclick="openModal('sloganModal')">Our Slogan</button>
-            <button class="btn-secondary" onclick="openModal('privacyModal')">Privacy & Legal</button>
+        <!-- Minimalist Action Buttons List -->
+        <div class="action-list">
+            <a href="https://www.facebook.com/FahiJawzCollection" target="_blank" rel="noopener" class="action-btn btn-primary">
+                <svg viewBox="0 0 24 24">
+                    <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.75z"/>
+                </svg>
+                <span>Visit Facebook Page</span>
+            </a>
+            
+            <a href="https://m.me/FahiJawzCollection" target="_blank" rel="noopener" class="action-btn btn-secondary">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.14 2 11.25c0 2.91 1.45 5.51 3.7 7.15V22l3.35-1.84c.9.25 1.87.39 2.95.39 5.52 0 10-4.14 10-9.25S17.52 2 12 2zm1 12.5h-2v-2h2v2zm0-4h-2v-4h2v4z"/>
+                </svg>
+                <span>Send Message</span>
+            </a>
+            
+            <button class="action-btn btn-secondary" onclick="openModal('privacyModal')">
+                <svg viewBox="0 0 24 24">
+                    <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
+                </svg>
+                <span>Privacy & Legal Info</span>
+            </button>
         </div>
 
-        <a href="collections.html" class="view-page-btn" style="margin-bottom: 20px;">
-            <button style="background: linear-gradient(135deg, #059669, #10b981);">Our Collection</button>
-        </a>
-
-        <a href="https://www.facebook.com/FahiJawzCollection" target="_blank" rel="noopener" class="view-page-btn">
-            <button>View Page</button>
-        </a>
-
-        <div class="map-container">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5812.264333492717!2d90.38894199634086!3d24.75942971335922!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x37564f9a02845b01%3A0x9966d0c5ca12dbfe!2sFahiJawz%20Collection!5e0!3m2!1sen!2sus!4v1770392677046!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <!-- Minimalist Location Section -->
+        <div class="map-section">
+            <div class="map-title">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                </svg>
+                <span>Find Our Store</span>
+            </div>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5812.264333492717!2d90.38894199634086!3d24.75942971335922!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x37564f9a02845b01%3A0x9966d0c5ca12dbfe!2sFahiJawz%20Collection!5e0!3m2!1sen!2sus!4v1770392677046!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
         </div>
+
+        <footer>
+            &copy; 2026 FahiJawz Collection. All Rights Reserved.
+        </footer>
     </div>
 
-    <div id="sloganModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('sloganModal')">&times;</span>
-            <h2>Our Slogan</h2>
-            <p><strong>"Where Tradition Meets Trend"</strong></p>
-            <p>At <strong>FahiJawz Collection</strong>, we believe that beauty lies in the fusion of our heritage and
-                modern lifestyle. We bring you handcrafted products that celebrate traditional craftsmanship (like
-                Crochet and Jamdani) while keeping you stylish in today's world.</p>
-        </div>
-    </div>
-
+    <!-- Privacy & Legal Modal -->
     <div id="privacyModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal('privacyModal')">&times;</span>
             <h2>Privacy & Legal Information</h2>
 
             <h4>1. Data Privacy</h4>
-            <p>We only collect necessary information (name, contact, address) to process your orders. Your personal data
-                is strictly confidential and never shared with third parties, except for delivery purposes.</p>
+            <p>We only collect necessary information (name, contact, address) to process your orders. Your personal data is strictly confidential and never shared with third parties, except for delivery purposes.</p>
 
             <h4>2. Intellectual Property</h4>
-            <p>All photos, videos, and descriptions on this page are the property of <strong>FahiJawz
-                    Collection</strong>. Unauthorized use for commercial purposes is strictly prohibited.</p>
+            <p>All photos, videos, and descriptions on this page are the property of <strong>FahiJawz Collection</strong>. Unauthorized use for commercial purposes is strictly prohibited.</p>
 
             <h4>3. Product Disclaimer</h4>
-            <p>As our products are handcrafted, slight variations in color and pattern may occur. This is a mark of
-                their unique, handmade origin.</p>
+            <p>As our products are handcrafted, slight variations in color and pattern may occur. This is a mark of their unique, handmade origin.</p>
 
             <h4>4. Delivery & Payment</h4>
-            <p>Orders are confirmed once complete details are provided. <strong>FahiJawz Collection</strong> is not
-                liable for delays caused by third-party courier services.</p>
+            <p>Orders are confirmed once complete details are provided. <strong>FahiJawz Collection</strong> is not liable for delays caused by third-party courier services.</p>
 
             <h4>5. Return & Refund Policy</h4>
-            <p>Please check the product in front of the delivery person. Report any defects immediately for verification
-                and return processing.</p>
+            <p>Please check the product in front of the delivery person. Report any defects immediately for verification and return processing.</p>
         </div>
     </div>
 
@@ -539,11 +518,6 @@
             }
         }
     </script>
-
-    <footer>
-        &copy; FahiJawz Collection. All Rights Reserved.
-    </footer>
-
 </body>
 
 </html>
