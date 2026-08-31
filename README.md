@@ -44,7 +44,7 @@ FahiJawz-Collection/
 
 ## ⚖️ Legal Information & Copyright
 
-**Copyright © 2024 FahiJawz Collection. All rights reserved.**
+**Copyright © FahiJawz Collection. All rights reserved.**
 
 This repository and its entire contents (including all photos, videos, source code, and descriptions) are the exclusive property of **FahiJawz Collection**.
 

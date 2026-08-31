@@ -4,26 +4,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#07090e">
     <meta name="description" content="FahiJawz Collection - Where Tradition Meets Trend. Handcrafted heritage products including Crochet and Jamdani for modern lifestyles.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://remoteruler.github.io/FahiJawz-Collection/">
+    <meta property="og:title" content="FahiJawz Collection | Where Tradition Meets Trend">
+    <meta property="og:description" content="Explore exquisite handcrafted heritage wear, Jamdani, and Crochet creations fused with contemporary elegance.">
+    <meta property="og:image" content="logo.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="FahiJawz Collection | Where Tradition Meets Trend">
+    <meta name="twitter:description" content="Explore exquisite handcrafted heritage wear, Jamdani, and Crochet creations fused with contemporary elegance.">
+    <meta name="twitter:image" content="logo.png">
+
     <title>FahiJawz Collection | Where Tradition Meets Trend</title>
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
     <style>
         :root {
-            --bg-dark: #070a12;
-            --bg-slate: #0f1422;
-            --bg-card: rgba(15, 20, 34, 0.65);
-            --gold: #d4af37;
-            --gold-light: #f3e5ab;
-            --gold-dark: #aa7c11;
-            --text-light: #f9fafb;
-            --text-muted: #8e9cae;
-            --border-light: rgba(255, 255, 255, 0.05);
-            --border-gold: rgba(212, 175, 55, 0.15);
-            --shadow-lg: 0 20px 40px -15px rgba(0, 0, 0, 0.7);
-            --shadow-gold: 0 0 20px rgba(212, 175, 55, 0.15);
-            --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            --bg-base: #06080d;
+            --bg-surface: #0c101a;
+            --bg-card: rgba(14, 18, 30, 0.80);
+            --bg-glass-inner: rgba(255, 255, 255, 0.03);
+            --gold-primary: #d4af37;
+            --gold-light: #f6e8b1;
+            --gold-bright: #ffe27a;
+            --gold-dark: #966f1e;
+            --gold-gradient: linear-gradient(135deg, #f7e7b4 0%, #d4af37 45%, #aa7a1e 100%);
+            --gold-gradient-hover: linear-gradient(135deg, #fff2cc 0%, #e5c04b 45%, #c59328 100%);
+            --gold-text-gradient: linear-gradient(135deg, #ffffff 15%, #f6e8b1 55%, #d4af37 95%);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --border-glass: rgba(255, 255, 255, 0.08);
+            --border-gold: rgba(212, 175, 55, 0.28);
+            --border-gold-glow: rgba(212, 175, 55, 0.55);
+            --shadow-card: 0 30px 60px -15px rgba(0,0,0,0.85), 0 0 0 1px rgba(255,255,255,0.06);
+            --shadow-gold-glow: 0 0 40px rgba(212,175,55,0.18);
+            --shadow-btn: 0 10px 25px -5px rgba(212,175,55,0.3);
+            --radius-main: 28px;
+            --radius-btn: 14px;
+            --radius-pill: 9999px;
+            --transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         * {
@@ -34,490 +63,620 @@
             user-select: none;
         }
 
-        /* Styled scrollbar */
-        ::-webkit-scrollbar {
-            width: 6px;
-        }
-        ::-webkit-scrollbar-track {
-            background: var(--bg-dark);
-        }
-        ::-webkit-scrollbar-thumb {
-            background: var(--bg-slate);
-            border-radius: 3px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--gold-dark);
-        }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: var(--bg-base); }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--gold-dark); }
 
         body {
-            font-family: 'Inter', system-ui, -apple-system, sans-serif;
-            background: #05070c;
-            color: var(--text-light);
+            font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-base);
+            color: var(--text-primary);
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
-            padding: 40px 20px;
+            padding: 48px 16px;
             position: relative;
             overflow-x: hidden;
+            background-image:
+                radial-gradient(ellipse at 50% 0%, rgba(212,175,55,0.09) 0%, transparent 55%),
+                radial-gradient(ellipse at 15% 45%, rgba(59,130,246,0.04) 0%, transparent 45%),
+                radial-gradient(ellipse at 88% 75%, rgba(212,175,55,0.06) 0%, transparent 40%);
+            background-attachment: fixed;
         }
 
-        /* Ambient background glow */
-        body::before {
-            content: '';
+        /* Ambient Orbs */
+        .ambient-orb {
             position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.04) 0%, transparent 60%);
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        .container {
-            position: relative;
-            z-index: 1;
-            max-width: 540px;
-            width: 100%;
-            padding: 50px 35px;
-            background: var(--bg-card);
-            -webkit-backdrop-filter: blur(20px);
-            backdrop-filter: blur(20px);
-            border-radius: 24px;
-            border: 1px solid var(--border-light);
-            box-shadow: var(--shadow-lg);
-            animation: fadeInScale 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-            text-align: center;
-            transition: filter 0.5s ease;
-        }
-
-        @keyframes fadeInScale {
-            from {
-                opacity: 0;
-                transform: scale(0.97) translateY(15px);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1) translateY(0);
-            }
-        }
-
-        .logo-link {
-            text-decoration: none;
-            display: inline-block;
-            margin-bottom: 25px;
-        }
-
-        .logo {
-            width: 130px;
-            height: auto;
             border-radius: 50%;
-            border: 1.5px solid var(--gold);
+            pointer-events: none;
+            z-index: 0;
+            filter: blur(60px);
+        }
+        .orb-top {
+            width: 500px; height: 500px;
+            background: radial-gradient(circle, rgba(212,175,55,0.14) 0%, transparent 70%);
+            top: -160px; left: 50%; transform: translateX(-50%);
+            animation: orbFloatTop 9s ease-in-out infinite alternate;
+        }
+        .orb-bottom-right {
+            width: 350px; height: 350px;
+            background: radial-gradient(circle, rgba(212,175,55,0.07) 0%, transparent 70%);
+            bottom: -80px; right: -60px;
+            animation: orbFloatCorner 12s ease-in-out infinite alternate-reverse;
+        }
+        @keyframes orbFloatTop {
+            0%   { transform: translateX(-50%) scale(0.9); opacity: 0.7; }
+            100% { transform: translateX(-50%) scale(1.15); opacity: 1; }
+        }
+        @keyframes orbFloatCorner {
+            0%   { transform: scale(0.88); opacity: 0.6; }
+            100% { transform: scale(1.12); opacity: 1; }
+        }
+
+        /* ─── CARD ─── */
+        .card-container {
+            position: relative; z-index: 1;
+            max-width: 560px; width: 100%;
+            background: var(--bg-card);
+            -webkit-backdrop-filter: blur(32px);
+            backdrop-filter: blur(32px);
+            border-radius: var(--radius-main);
+            border: 1px solid var(--border-gold);
+            box-shadow: var(--shadow-card), var(--shadow-gold-glow);
+            padding: 52px 38px 44px;
+            text-align: center;
+            animation: cardIn 0.85s cubic-bezier(0.16,1,0.3,1);
+            transition: filter 0.4s ease;
+        }
+        @keyframes cardIn {
+            from { opacity: 0; transform: translateY(28px) scale(0.965); }
+            to   { opacity: 1; transform: translateY(0)   scale(1); }
+        }
+
+        /* ─── BADGE ─── */
+        .badge-row { margin-bottom: 24px; display: inline-flex; }
+        .brand-badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 7px 15px;
+            background: rgba(212,175,55,0.08);
+            border: 1px solid rgba(212,175,55,0.28);
+            border-radius: var(--radius-pill);
+            font-size: 0.73rem; font-weight: 700;
+            letter-spacing: 0.9px; text-transform: uppercase;
+            color: var(--gold-light);
+        }
+        .live-dot {
+            width: 7px; height: 7px; border-radius: 50%;
+            background: #22c55e; box-shadow: 0 0 8px #22c55e;
+            animation: blink 2s ease-in-out infinite;
+        }
+        @keyframes blink {
+            0%,100% { opacity:1; transform:scale(1); }
+            50%      { opacity:0.4; transform:scale(0.8); }
+        }
+
+        /* ─── LOGO ─── */
+        .logo-link {
+            display: inline-block; text-decoration: none; margin-bottom: 26px;
+        }
+        .logo-ring {
+            width: 138px; height: 138px; border-radius: 50%;
+            background: linear-gradient(135deg, rgba(212,175,55,0.85), rgba(255,255,255,0.12), rgba(150,111,30,0.85));
             padding: 5px;
-            box-shadow: var(--shadow-gold);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.55), 0 0 28px rgba(212,175,55,0.28);
             transition: var(--transition);
         }
-
-        .logo:hover {
-            transform: scale(1.04) rotate(1deg);
-            box-shadow: 0 0 25px rgba(212, 175, 55, 0.3);
+        .logo-ring:hover {
+            transform: scale(1.06);
+            box-shadow: 0 14px 38px rgba(0,0,0,0.65), 0 0 40px rgba(212,175,55,0.42);
+            background: linear-gradient(135deg, #f6e8b1, #d4af37, #f6e8b1);
         }
+        .logo-img {
+            width: 100%; height: 100%; object-fit: cover;
+            border-radius: 50%; background: #0d121f;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+        .logo-link:hover .logo-img { transform: rotate(2deg); }
 
+        /* ─── HEADING ─── */
         h1 {
             font-family: 'Playfair Display', Georgia, serif;
-            font-size: 2.5rem;
-            color: var(--text-light);
-            margin-bottom: 8px;
-            letter-spacing: -0.01em;
-            font-weight: 700;
-            background: linear-gradient(135deg, var(--text-light) 40%, var(--gold-light) 100%);
+            font-size: 2.55rem; font-weight: 800;
+            letter-spacing: -0.02em; line-height: 1.15;
+            margin-bottom: 10px;
+            background: var(--gold-text-gradient);
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
-            line-height: 1.2;
         }
-
         .slogan {
-            font-size: 1.1rem;
-            color: var(--text-muted);
-            font-style: italic;
-            margin-bottom: 30px;
-            font-weight: 300;
-            letter-spacing: 0.5px;
+            font-family: 'Playfair Display', serif;
+            font-style: italic; font-size: 1.12rem; font-weight: 400;
+            color: var(--text-secondary); margin-bottom: 22px; letter-spacing: 0.3px;
         }
 
-        .divider {
-            width: 80px;
-            height: 1px;
-            background: linear-gradient(to right, transparent, var(--gold), transparent);
-            margin: 0 auto 35px;
-            opacity: 0.4;
+        /* ─── CRAFT TAGS ─── */
+        .craft-tags {
+            display: flex; flex-wrap: wrap; justify-content: center;
+            gap: 8px; margin-bottom: 28px;
+        }
+        .tag-pill {
+            padding: 5px 13px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--border-glass);
+            border-radius: var(--radius-pill);
+            font-size: 0.78rem; font-weight: 500;
+            color: var(--text-secondary);
+            transition: var(--transition);
+        }
+        .tag-pill:hover {
+            background: rgba(212,175,55,0.07);
+            border-color: var(--border-gold);
+            color: var(--gold-light);
+            transform: translateY(-1px);
         }
 
-        /* Action Buttons List */
-        .action-list {
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-            margin-bottom: 35px;
+        /* ─── DIVIDER ─── */
+        .lux-divider {
+            position: relative; height: 1px; width: 100%;
+            background: linear-gradient(90deg, transparent, rgba(212,175,55,0.38), transparent);
+            margin: 0 auto 30px;
         }
+        .lux-divider::after {
+            content: '✦';
+            position: absolute; top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            color: var(--gold-primary); font-size: 10px;
+            background: var(--bg-surface); padding: 0 8px;
+        }
+
+        /* ─── BUTTONS ─── */
+        .action-group { display: flex; flex-direction: column; gap: 14px; margin-bottom: 34px; }
 
         .action-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            padding: 15px 24px;
-            font-size: 0.95rem;
-            font-weight: 500;
-            text-decoration: none;
-            border-radius: 12px;
-            cursor: pointer;
-            transition: var(--transition);
-            font-family: 'Inter', sans-serif;
-            border: 1px solid transparent;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold) 100%);
-            color: #05070c;
-            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.15);
-            font-weight: 600;
-            letter-spacing: 0.3px;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-1.5px);
-            box-shadow: 0 6px 18px rgba(212, 175, 55, 0.25);
-            filter: brightness(1.08);
-        }
-
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.02);
-            color: var(--text-light);
-            border: 1px solid var(--border-light);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.04);
-            border-color: var(--border-gold);
-            transform: translateY(-1.5px);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .action-btn svg {
-            width: 18px;
-            height: 18px;
-            fill: currentColor;
-        }
-
-        /* Map Section */
-        .map-section {
-            margin-top: 10px;
-        }
-
-        .map-title {
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: var(--text-muted);
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 6px;
-        }
-
-        .map-title svg {
-            width: 14px;
-            height: 14px;
-            fill: currentColor;
-        }
-
-        .map-container {
-            width: 100%;
-            border-radius: 16px;
-            overflow: hidden;
-            border: 1px solid var(--border-light);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-            transition: var(--transition);
-        }
-
-        .map-container:hover {
-            border-color: var(--border-gold);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
-        }
-
-        .map-container iframe {
-            width: 100%;
-            height: 220px;
-            display: block;
-            border: 0;
-            filter: grayscale(0.4) contrast(1.15) invert(0.9) hue-rotate(180deg);
-            transition: var(--transition);
-        }
-
-        .map-container:hover iframe {
-            filter: none;
-        }
-
-        /* Modal Styles */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 100;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(3, 5, 10, 0.8);
-            -webkit-backdrop-filter: blur(12px);
-            backdrop-filter: blur(12px);
-            animation: fadeInModal 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        @keyframes fadeInModal {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        .modal-content {
-            background: linear-gradient(135deg, #0f1422 0%, #05070c 100%);
-            margin: 8% auto;
-            padding: 40px 35px;
-            border-radius: 20px;
-            width: 90%;
-            max-width: 500px;
+            position: relative; overflow: hidden;
+            display: flex; align-items: center;
+            justify-content: space-between; width: 100%;
+            padding: 16px 22px; border-radius: var(--radius-btn);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 0.97rem; font-weight: 600;
+            text-decoration: none; cursor: pointer;
+            transition: var(--transition); border: 1px solid transparent;
             text-align: left;
-            max-height: 80vh;
-            overflow-y: auto;
-            position: relative;
-            border: 1px solid var(--border-gold);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
-            animation: slideInModal 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .btn-left { display: flex; align-items: center; gap: 14px; }
+        .btn-icon {
+            width: 38px; height: 38px; border-radius: 11px;
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0; transition: var(--transition);
+        }
+        .action-btn svg { width: 20px; height: 20px; fill: currentColor; }
+        .btn-arrow {
+            width: 18px; height: 18px; opacity: 0.55;
+            flex-shrink: 0; transition: var(--transition);
+            fill: none; stroke: currentColor;
+            stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round;
+        }
+        .action-btn:hover .btn-arrow { opacity: 1; transform: translateX(3px); }
+
+        /* Gold Primary */
+        .btn-gold {
+            background: var(--gold-gradient);
+            color: #07090e;
+            box-shadow: var(--shadow-btn);
+            border-color: rgba(255,255,255,0.38);
+        }
+        .btn-gold .btn-icon { background: rgba(7,9,14,0.14); color: #07090e; }
+        .btn-gold:hover {
+            background: var(--gold-gradient-hover);
+            transform: translateY(-2.5px);
+            box-shadow: 0 16px 32px -5px rgba(212,175,55,0.48);
         }
 
-        @keyframes slideInModal {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        /* Glass Secondary */
+        .btn-glass {
+            background: rgba(255,255,255,0.03);
+            color: var(--text-primary);
+            border-color: var(--border-glass);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.22);
+        }
+        .btn-glass .btn-icon {
+            background: rgba(255,255,255,0.05);
+            color: var(--gold-primary);
+            border: 1px solid rgba(212,175,55,0.16);
+        }
+        .btn-glass:hover {
+            background: rgba(255,255,255,0.065);
+            border-color: var(--border-gold);
+            color: #fff;
+            transform: translateY(-2.5px);
+            box-shadow: 0 10px 26px rgba(0,0,0,0.38), 0 0 18px rgba(212,175,55,0.1);
+        }
+        .btn-glass:hover .btn-icon {
+            background: rgba(212,175,55,0.14); border-color: var(--gold-primary); color: var(--gold-light);
         }
 
-        .close {
-            position: absolute;
-            right: 20px;
-            top: 20px;
-            color: var(--text-muted);
-            cursor: pointer;
-            transition: var(--transition);
-            width: 32px;
-            height: 32px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            border: 1px solid var(--border-light);
-            background: rgba(255, 255, 255, 0.01);
-            font-size: 1.1rem;
+        /* Shimmer sweep */
+        .btn-shimmer::before {
+            content: ''; position: absolute;
+            top: 0; left: -100%; width: 55%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.22), transparent);
+            transform: skewX(-22deg); transition: 0.65s ease;
         }
+        .btn-shimmer:hover::before { left: 150%; }
 
-        .close:hover {
-            color: var(--gold);
-            border-color: var(--gold);
-            background: rgba(212, 175, 55, 0.06);
-            transform: rotate(90deg);
+        /* ─── MAP ─── */
+        .map-section { text-align: left; }
+        .map-header {
+            display: flex; align-items: center;
+            justify-content: space-between;
+            margin-bottom: 13px; padding: 0 2px;
         }
-
-        h2 {
-            font-family: 'Playfair Display', serif;
-            color: var(--gold);
-            margin-bottom: 20px;
-            font-size: 1.8rem;
-            font-weight: 600;
-        }
-
-        h4 {
-            margin-top: 24px;
+        .map-label {
+            display: flex; align-items: center; gap: 7px;
+            font-size: 0.82rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 1.2px;
             color: var(--gold-light);
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 6px;
         }
-
-        p, li {
-            font-size: 0.9rem;
-            line-height: 1.7;
-            color: var(--text-muted);
-            margin-bottom: 10px;
+        .map-label svg { width: 14px; height: 14px; fill: currentColor; }
+        .map-ext-link {
+            display: flex; align-items: center; gap: 4px;
+            font-size: 0.76rem; color: var(--text-secondary);
+            text-decoration: none; transition: var(--transition);
         }
-
-        ul {
-            margin-left: 20px;
+        .map-ext-link:hover { color: var(--gold-primary); }
+        .map-ext-link svg { width: 12px; height: 12px; fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+        .map-frame {
+            width: 100%; border-radius: 18px; overflow: hidden;
+            border: 1px solid var(--border-gold);
+            background: #080c14;
+            box-shadow: 0 12px 32px rgba(0,0,0,0.42);
+            transition: var(--transition);
         }
+        .map-frame:hover {
+            border-color: var(--border-gold-glow);
+            box-shadow: 0 18px 40px rgba(0,0,0,0.55), 0 0 22px rgba(212,175,55,0.16);
+        }
+        .map-frame iframe {
+            width: 100%; height: 225px; display: block; border: 0;
+            filter: grayscale(0.25) contrast(1.1) invert(0.9) hue-rotate(180deg);
+            transition: filter 0.4s ease;
+        }
+        .map-frame:hover iframe { filter: none; }
 
+        /* ─── FOOTER ─── */
         footer {
-            margin-top: 40px;
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            opacity: 0.4;
+            margin-top: 36px; padding-top: 24px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            display: flex; flex-direction: column; align-items: center; gap: 5px;
         }
+        .footer-copy { font-size: 0.82rem; color: var(--text-secondary); }
+        .footer-tag  { font-size: 0.74rem; color: var(--text-muted); letter-spacing: 0.5px; }
 
-        /* Security focus-blur utility */
+        /* ─── PROTECTION ─── */
         .content-protected {
-            filter: blur(8px);
+            filter: blur(12px) grayscale(0.5);
             pointer-events: none;
+            transition: filter 0.3s ease;
         }
 
-        /* Responsive design */
+        /* ─── MODAL ─── */
+        .modal-backdrop {
+            display: none; position: fixed; z-index: 999; inset: 0;
+            background: rgba(3,5,9,0.84);
+            -webkit-backdrop-filter: blur(18px);
+            backdrop-filter: blur(18px);
+            opacity: 0; transition: opacity 0.3s ease;
+            align-items: center; justify-content: center; padding: 20px;
+        }
+        .modal-backdrop.show { display: flex; opacity: 1; }
+        .modal-box {
+            background: linear-gradient(145deg, #101626 0%, #070a12 100%);
+            border: 1px solid var(--border-gold);
+            border-radius: 24px; max-width: 520px; width: 100%;
+            max-height: 88vh; overflow-y: auto;
+            padding: 34px 28px 28px;
+            box-shadow: 0 32px 80px rgba(0,0,0,0.85), 0 0 30px rgba(212,175,55,0.16);
+            position: relative;
+            transform: translateY(22px) scale(0.96);
+            transition: transform 0.38s cubic-bezier(0.16,1,0.3,1);
+            text-align: left;
+        }
+        .modal-backdrop.show .modal-box { transform: translateY(0) scale(1); }
+
+        .modal-head {
+            display: flex; align-items: flex-start;
+            justify-content: space-between; gap: 12px;
+            margin-bottom: 22px; padding-bottom: 16px;
+            border-bottom: 1px solid var(--border-glass);
+        }
+        .modal-head h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.55rem; color: var(--gold-light); font-weight: 700; line-height: 1.2;
+        }
+        .modal-head .modal-sub { font-size: 0.79rem; color: var(--text-secondary); margin-top: 3px; }
+        .close-btn {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid var(--border-glass);
+            color: var(--text-secondary);
+            width: 34px; height: 34px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            cursor: pointer; font-size: 1.05rem;
+            transition: var(--transition); flex-shrink: 0;
+        }
+        .close-btn:hover {
+            color: var(--gold-light); border-color: var(--gold-primary);
+            background: rgba(212,175,55,0.1); transform: rotate(90deg);
+        }
+
+        /* Policy Cards */
+        .policy-list { display: flex; flex-direction: column; gap: 14px; margin-bottom: 22px; }
+        .policy-card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 14px; padding: 15px 17px;
+            transition: var(--transition);
+        }
+        .policy-card:hover {
+            background: rgba(255,255,255,0.035);
+            border-color: rgba(212,175,55,0.2);
+        }
+        .policy-title {
+            display: flex; align-items: center; gap: 8px;
+            color: var(--gold-light); font-size: 0.9rem; font-weight: 700;
+            margin-bottom: 7px;
+        }
+        .policy-title svg { width: 15px; height: 15px; fill: var(--gold-primary); flex-shrink: 0; }
+        .policy-card p {
+            font-size: 0.84rem; line-height: 1.66;
+            color: var(--text-secondary);
+        }
+        .policy-card p strong { color: var(--text-primary); }
+        .btn-done {
+            width: 100%; padding: 13px;
+            background: rgba(212,175,55,0.12);
+            border: 1px solid var(--border-gold);
+            color: var(--gold-light); border-radius: var(--radius-btn);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 0.92rem; font-weight: 700;
+            cursor: pointer; transition: var(--transition);
+        }
+        .btn-done:hover {
+            background: var(--gold-gradient); color: #07090e;
+            box-shadow: 0 8px 22px rgba(212,175,55,0.35);
+        }
+
+        /* ─── RESPONSIVE ─── */
         @media (max-width: 480px) {
-            .container {
-                padding: 40px 20px;
-            }
-
-            h1 {
-                font-size: 2.1rem;
-            }
-
-            .slogan {
-                font-size: 1rem;
-            }
+            body { padding: 28px 12px; }
+            .card-container { padding: 38px 20px 30px; border-radius: 22px; }
+            h1 { font-size: 2.1rem; }
+            .slogan { font-size: 1rem; }
+            .logo-ring { width: 118px; height: 118px; }
+            .action-btn { padding: 14px 18px; font-size: 0.92rem; }
+            .modal-box { padding: 22px 16px 18px; border-radius: 20px; }
         }
     </style>
 </head>
 
 <body>
 
-    <div class="container">
-        <a href="https://www.facebook.com/FahiJawzCollection" target="_blank" rel="noopener" class="logo-link">
-            <img src="logo.png" alt="FahiJawz Collection Logo" class="logo">
+    <div class="ambient-orb orb-top" aria-hidden="true"></div>
+    <div class="ambient-orb orb-bottom-right" aria-hidden="true"></div>
+
+    <main class="card-container" id="mainCard">
+
+        <!-- Live Heritage Badge -->
+        <div class="badge-row">
+            <div class="brand-badge">
+                <span class="live-dot"></span>
+                <span>Authentic Handcrafted Heritage</span>
+            </div>
+        </div>
+
+        <!-- Logo -->
+        <a href="https://www.facebook.com/FahiJawzCollection" target="_blank" rel="noopener noreferrer" class="logo-link" title="FahiJawz Collection on Facebook">
+            <div class="logo-ring">
+                <img src="logo.png" alt="FahiJawz Collection Official Logo" class="logo-img">
+            </div>
         </a>
+
+        <!-- Brand Name & Slogan -->
         <h1>FahiJawz Collection</h1>
-        <div class="slogan">Where Tradition Meets Trend</div>
-        <div class="divider"></div>
+        <p class="slogan">Where Tradition Meets Trend</p>
 
-        <!-- Minimalist Action Buttons List -->
-        <div class="action-list">
-            <a href="https://www.facebook.com/FahiJawzCollection" target="_blank" rel="noopener" class="action-btn btn-primary">
-                <svg viewBox="0 0 24 24">
-                    <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.75z"/>
-                </svg>
-                <span>Visit Facebook Page</span>
+        <!-- Craft Tags -->
+        <div class="craft-tags">
+            <span class="tag-pill">🧶 Handcrafted Crochet</span>
+            <span class="tag-pill">✨ Heritage Jamdani</span>
+            <span class="tag-pill">💎 Modern Style</span>
+            <span class="tag-pill">🚚 Nationwide Delivery</span>
+        </div>
+
+        <!-- Divider -->
+        <div class="lux-divider"></div>
+
+        <!-- Action Buttons -->
+        <div class="action-group">
+
+            <a href="https://www.facebook.com/FahiJawzCollection" target="_blank" rel="noopener noreferrer" class="action-btn btn-gold btn-shimmer">
+                <div class="btn-left">
+                    <div class="btn-icon">
+                        <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    </div>
+                    <span>Visit Facebook Page</span>
+                </div>
+                <svg class="btn-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
-            
-            <a href="https://m.me/FahiJawzCollection" target="_blank" rel="noopener" class="action-btn btn-secondary">
-                <svg viewBox="0 0 24 24">
-                    <path d="M12 2C6.48 2 2 6.14 2 11.25c0 2.91 1.45 5.51 3.7 7.15V22l3.35-1.84c.9.25 1.87.39 2.95.39 5.52 0 10-4.14 10-9.25S17.52 2 12 2zm1 12.5h-2v-2h2v2zm0-4h-2v-4h2v4z"/>
-                </svg>
-                <span>Send Message</span>
+
+            <a href="https://m.me/FahiJawzCollection" target="_blank" rel="noopener noreferrer" class="action-btn btn-glass btn-shimmer">
+                <div class="btn-left">
+                    <div class="btn-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.14 2 11.25c0 2.91 1.45 5.51 3.7 7.15V22l3.35-1.84c.9.25 1.87.39 2.95.39 5.52 0 10-4.14 10-9.25S17.52 2 12 2zm1.25 12.75L10.5 12 5.5 14.75 11 9l2.75 2.75 5-2.75-5.5 5.75z"/></svg>
+                    </div>
+                    <span>Send Message / Place Order</span>
+                </div>
+                <svg class="btn-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
-            
-            <button class="action-btn btn-secondary" onclick="openModal('privacyModal')">
-                <svg viewBox="0 0 24 24">
-                    <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
-                </svg>
-                <span>Privacy & Legal Info</span>
+
+            <button type="button" class="action-btn btn-glass" onclick="toggleModal(true)">
+                <div class="btn-left">
+                    <div class="btn-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-1 6h2v2h-2V7zm0 4h2v6h-2v-6z"/></svg>
+                    </div>
+                    <span>Privacy &amp; Store Policies</span>
+                </div>
+                <svg class="btn-arrow" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
             </button>
+
         </div>
 
-        <!-- Minimalist Location Section -->
-        <div class="map-section">
-            <div class="map-title">
-                <svg viewBox="0 0 24 24">
-                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-                </svg>
-                <span>Find Our Store</span>
+        <!-- Map Section -->
+        <section class="map-section">
+            <div class="map-header">
+                <div class="map-label">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                    <span>Store Location</span>
+                </div>
+                <a href="https://maps.google.com/?q=24.75942971335922,90.38894199634086" target="_blank" rel="noopener noreferrer" class="map-ext-link">
+                    <span>Open in Maps</span>
+                    <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                </a>
             </div>
-            <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5812.264333492717!2d90.38894199634086!3d24.75942971335922!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x37564f9a02845b01%3A0x9966d0c5ca12dbfe!2sFahiJawz%20Collection!5e0!3m2!1sen!2sus!4v1770392677046!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="map-frame">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5812.264333492717!2d90.38894199634086!3d24.75942971335922!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x37564f9a02845b01%3A0x9966d0c5ca12dbfe!2sFahiJawz%20Collection!5e0!3m2!1sen!2sus!4v1770392677046!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="FahiJawz Collection Store Location"></iframe>
             </div>
-        </div>
+        </section>
 
+        <!-- Footer -->
         <footer>
-            &copy; 2026 FahiJawz Collection. All Rights Reserved.
+            <div class="footer-copy">&copy; <span id="copyrightYear"></span> FahiJawz Collection. All rights reserved.</div>
+            <div class="footer-tag">Crafted with Heritage &amp; Elegance</div>
         </footer>
-    </div>
+
+    </main>
 
     <!-- Privacy & Legal Modal -->
-    <div id="privacyModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('privacyModal')">&times;</span>
-            <h2>Privacy & Legal Information</h2>
+    <div id="legalModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="modal-box">
 
-            <h4>1. Data Privacy</h4>
-            <p>We only collect necessary information (name, contact, address) to process your orders. Your personal data is strictly confidential and never shared with third parties, except for delivery purposes.</p>
+            <div class="modal-head">
+                <div>
+                    <h2 id="modalTitle">Privacy &amp; Legal Info</h2>
+                    <div class="modal-sub">Official Policies &amp; Customer Protection Terms</div>
+                </div>
+                <button type="button" class="close-btn" onclick="toggleModal(false)" aria-label="Close">&times;</button>
+            </div>
 
-            <h4>2. Intellectual Property</h4>
-            <p>All photos, videos, and descriptions on this page are the property of <strong>FahiJawz Collection</strong>. Unauthorized use for commercial purposes is strictly prohibited.</p>
+            <div class="policy-list">
 
-            <h4>3. Product Disclaimer</h4>
-            <p>As our products are handcrafted, slight variations in color and pattern may occur. This is a mark of their unique, handmade origin.</p>
+                <div class="policy-card">
+                    <div class="policy-title">
+                        <svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+                        <span>1. Data Privacy</span>
+                    </div>
+                    <p>We only collect essential customer details (name, contact number, delivery address) to process your orders. Your information is strictly confidential and never shared with third parties, except verified delivery couriers.</p>
+                </div>
 
-            <h4>4. Delivery & Payment</h4>
-            <p>Orders are confirmed once complete details are provided. <strong>FahiJawz Collection</strong> is not liable for delays caused by third-party courier services.</p>
+                <div class="policy-card">
+                    <div class="policy-title">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                        <span>2. Intellectual Property</span>
+                    </div>
+                    <p>All photos, videos, design patterns, logos, and descriptions on this page are the exclusive intellectual property of <strong>FahiJawz Collection</strong>. Unauthorized reproduction or commercial use is strictly prohibited.</p>
+                </div>
 
-            <h4>5. Return & Refund Policy</h4>
-            <p>Please check the product in front of the delivery person. Report any defects immediately for verification and return processing.</p>
+                <div class="policy-card">
+                    <div class="policy-title">
+                        <svg viewBox="0 0 24 24"><path d="M12 3L2 12h3v8h14v-8h3L12 3zm0 4.5l5 4.5h-2v6h-6v-6H7l5-4.5z"/></svg>
+                        <span>3. Handcrafted Product Disclaimer</span>
+                    </div>
+                    <p>Each item is meticulously handcrafted. Slight variations in color, weave, or texture are inherent characteristics that celebrate the unique beauty of genuine artisanal work.</p>
+                </div>
+
+                <div class="policy-card">
+                    <div class="policy-title">
+                        <svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-2 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+                        <span>4. Delivery &amp; Payment</span>
+                    </div>
+                    <p>Orders are confirmed once full delivery details are provided. <strong>FahiJawz Collection</strong> is not liable for delays caused by third-party courier services. Please verify your parcel upon receipt.</p>
+                </div>
+
+                <div class="policy-card">
+                    <div class="policy-title">
+                        <svg viewBox="0 0 24 24"><path d="M19 8l-4 4h3c0 3.31-2.69 6-6 6-1.01 0-1.97-.25-2.8-.7l-1.46 1.46C8.97 19.54 10.43 20 12 20c4.42 0 8-3.58 8-8h3l-4-4zM6 12c0-3.31 2.69-6 6-6 1.01 0 1.97.25 2.8.7l1.46-1.46C15.03 4.46 13.57 4 12 4c-4.42 0-8 3.58-8 8H1l4 4 4-4H6z"/></svg>
+                        <span>5. Return &amp; Exchange Policy</span>
+                    </div>
+                    <p>If you notice any manufacturing defect, please report it immediately with unboxing documentation within 24 hours of delivery for prompt verification and assistance.</p>
+                </div>
+
+            </div>
+
+            <button type="button" class="btn-done" onclick="toggleModal(false)">Understood &amp; Close</button>
+
         </div>
     </div>
 
     <script>
-        // Disable Right-Click
-        document.addEventListener('contextmenu', event => event.preventDefault());
+        // ── Dynamic Copyright Year ──
+        document.getElementById('copyrightYear').textContent = new Date().getFullYear();
 
-        // Disable Copy, Cut, and Paste
-        document.addEventListener('copy', event => event.preventDefault());
-        document.addEventListener('cut', event => event.preventDefault());
+        // ── Modal ──
+        const modal = document.getElementById('legalModal');
 
-        // Disable specific keyboard shortcuts (Ctrl+C, Ctrl+U, Ctrl+S, Ctrl+P, PrintScreen)
-        document.addEventListener('keydown', (event) => {
-            if (event.ctrlKey && (['c', 'u', 's', 'p', 'a'].includes(event.key.toLowerCase()))) {
-                event.preventDefault();
-            }
-            if (event.key === 'PrintScreen') {
-                event.preventDefault();
-                alert('Screenshots are disabled to protect content.');
-            }
-        });
-
-        // Smart Protect: Blur on Focus Loss / Visibility Change
-        function toggleProtection(isProtected) {
-            const container = document.querySelector('.container');
-            if (isProtected) {
-                container.classList.add('content-protected');
+        function toggleModal(open) {
+            if (open) {
+                modal.style.display = 'flex';
+                requestAnimationFrame(() => {
+                    requestAnimationFrame(() => modal.classList.add('show'));
+                });
+                document.body.style.overflow = 'hidden';
             } else {
-                container.classList.remove('content-protected');
-            }
-        }
-
-        window.addEventListener('blur', () => toggleProtection(true));
-        window.addEventListener('focus', () => toggleProtection(false));
-        document.addEventListener('visibilitychange', () => {
-            if (document.hidden) toggleProtection(true);
-        });
-
-        function openModal(id) {
-            document.getElementById(id).style.display = "block";
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeModal(id) {
-            document.getElementById(id).style.display = "none";
-            document.body.style.overflow = 'auto';
-        }
-
-        // Close modal if clicked outside of it
-        window.onclick = function (event) {
-            if (event.target.className === 'modal') {
-                event.target.style.display = "none";
+                modal.classList.remove('show');
+                setTimeout(() => { modal.style.display = 'none'; }, 350);
                 document.body.style.overflow = 'auto';
             }
         }
-    </script>
-</body>
 
+        modal.addEventListener('click', (e) => { if (e.target === modal) toggleModal(false); });
+
+        // ── Client-Side Protections ──
+        document.addEventListener('contextmenu', (e) => e.preventDefault());
+        document.addEventListener('copy',        (e) => e.preventDefault());
+        document.addEventListener('cut',         (e) => e.preventDefault());
+
+        // ── Keyboard: Escape + Shortcut Blocking (single unified listener) ──
+        document.addEventListener('keydown', (e) => {
+            // Close modal on Escape
+            if (e.key === 'Escape' && modal.classList.contains('show')) {
+                toggleModal(false);
+            }
+            // Block Ctrl+C/U/S/P/A
+            if (e.ctrlKey && ['c','u','s','p','a'].includes(e.key.toLowerCase())) {
+                e.preventDefault();
+            }
+            // Block PrintScreen
+            if (e.key === 'PrintScreen') {
+                e.preventDefault();
+                alert('Screenshots are restricted to protect copyrighted brand content.');
+            }
+        });
+
+        // ── Smart Focus-Loss Blur ──
+        function setProtection(on) {
+            const card = document.getElementById('mainCard');
+            if (card) card.classList.toggle('content-protected', on);
+        }
+
+        window.addEventListener('blur', ()              => setProtection(true));
+        window.addEventListener('focus', ()             => setProtection(false));
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) setProtection(true);
+        });
+    </script>
+
+</body>
 </html>
