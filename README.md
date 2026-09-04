@@ -1,5 +1,8 @@
 <div align="center">
-  <img src="logo.png" alt="FahiJawz Collection Logo" width="140" style="border-radius: 50%; border: 3px solid #d4af37; padding: 4px; margin-bottom: 20px;">
+
+  <a href="https://www.facebook.com/FahiJawzCollection" target="_blank">
+    <img src="logo.png" alt="FahiJawz Collection Official Logo" width="160">
+  </a>
 
   # ✨ FahiJawz Collection ✨
   
