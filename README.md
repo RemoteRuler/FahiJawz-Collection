@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="logo.png" alt="FahiJawz Collection Logo" width="150" style="border-radius: 50%; border: 3px solid #eab308; padding: 5px; margin-bottom: 20px;">
+  <img src="logo.png" alt="FahiJawz Collection Logo" width="140" style="border-radius: 50%; border: 3px solid #d4af37; padding: 4px; margin-bottom: 20px;">
 
   # ✨ FahiJawz Collection ✨
   
@@ -7,38 +7,46 @@
 
   [![Status](https://img.shields.io/badge/Status-Active-success.svg)]()
   [![License](https://img.shields.io/badge/License-Proprietary-red.svg)]()
-  [![Design](https://img.shields.io/badge/Design-Premium-gold.svg)]()
+  [![Design](https://img.shields.io/badge/Theme-Ultra--Luxury%20Light-gold.svg)]()
+  [![Craft](https://img.shields.io/badge/Craft-Crochet%20%26%20Jamdani-orange.svg)]()
 
-  **FahiJawz Collection is a digital storefront celebrating heritage fused with modern style. We offer handcrafted products that bring traditional craftsmanship—like Crochet and Jamdani—into your contemporary lifestyle.**
+  **FahiJawz Collection is an exclusive digital storefront celebrating Bengali heritage craftsmanship fused with modern elegance. We offer exquisite handcrafted creations—from intricate Crochet wear to timeless Jamdani—tailored for contemporary lifestyles.**
 </div>
 
 ---
 
-## 🌟 Key Features
+## 🌟 Key Highlights
 
-- 🧶 **Traditional Craftsmanship:** High-quality handcrafted items that value and preserve our heritage.
-- 🎨 **Modern Aesthetics:** Curated trends for the stylish individual, wrapped in a premium dark-themed UI.
-- 📱 **Responsive Design:** A fully responsive, elegant, and interactive browsing experience across all devices.
-- 🔒 **Content Protection:** Advanced client-side security measures to protect intellectual property, including right-click disable, keyboard shortcut blocking, and dynamic focus-loss blurring.
-- ⚡ **Lightweight Architecture:** Built with pure HTML, CSS, and Vanilla JavaScript for maximum performance and zero dependency overhead.
+- 🧶 **Authentic Handcrafted Heritage:** Pure artisanal craftsmanship celebrating traditional Jamdani and crochet artistry.
+- 🏛️ **Ultra-Luxury Light Aesthetics:** Bespoke light marble and imperial gold aesthetic with delicate concentric hairline rings, Roman serif typography, and rich visual hierarchy.
+- 📜 **Bilingual Store Policies:** Comprehensive 7-point Terms & Conditions and 4-point General Conditions modal with Bengali and English text.
+- 📱 **Fully Responsive Layout:** Flawless experience optimized across smartphones, tablets, laptops, and ultra-wide displays.
+- 🔒 **Client-Side Content Protection:** Right-click prevention, keyboard shortcut protection, and dynamic focus-loss protection.
+- ⚡ **Zero-Dependency Architecture:** Pure semantic HTML5, modern CSS3 variables/animations, and lightweight Vanilla JavaScript.
 
 ## 🛠️ Technology Stack
 
-- **Frontend:** HTML5, CSS3 (Variables, Animations, Glassmorphism), Vanilla JavaScript (DOM manipulation, Security logic)
-- **Typography:** Google Fonts (`Playfair Display`, `Inter`).
+- **Markup & Structure:** Semantic HTML5
+- **Styling:** Custom CSS3 (CSS Variables, Flexbox/Grid, Glassmorphism, Micro-animations)
+- **Typography:** Google Fonts (`Cinzel`, `Playfair Display`, `Plus Jakarta Sans`, `Hind Siliguri`)
+- **Logic & Security:** Pure Vanilla JavaScript (Dynamic copyright calculation, policy modal controller, interactive security guards)
 
-## 🚀 Live Preview
+## 🚀 Live Website
 
-Experience the FahiJawz Collection live:
-👉 [**Visit the Official Website**](https://remoteruler.github.io/FahiJawz-Collection/)
+Experience the official FahiJawz Collection live:
+👉 [**Visit FahiJawz Collection Official Page**](https://remoteruler.github.io/FahiJawz-Collection/)
 
 ## 📁 Repository Structure
 
 ```text
 FahiJawz-Collection/
-├── index.html            # Main landing page with modals and anti-copy protection
-├── logo.png              # Official brand logo
-├── README.md             # Project documentation
+├── .github/
+│   └── workflows/
+│       └── static.yml    # GitHub Actions workflow for automatic Pages deployment
+├── .gitignore            # Clean git ignore definitions
+├── index.html            # Main landing page with bilingual policy modal and protections
+├── logo.png              # Official circular marble & imperial gold brand medallion
+├── README.md             # Project documentation & overview
 └── LICENSE               # Proprietary legal agreement
 ```
 
@@ -46,18 +54,16 @@ FahiJawz-Collection/
 
 **Copyright © FahiJawz Collection. All rights reserved.**
 
-This repository and its entire contents (including all photos, videos, source code, and descriptions) are the exclusive property of **FahiJawz Collection**.
+This repository and its entire contents (including all photos, videos, source code, designs, and descriptions) are the exclusive intellectual property of **FahiJawz Collection**.
 
 ⚠️ **UNAUTHORIZED USE IS STRICTLY PROHIBITED** ⚠️
 
-- You may not copy, clone, or download this repository.
-- You may not use any automated tools to scrape our product data or images.
-- Commercial or personal reuse of our design assets or brand identity is strictly forbidden.
-
-Please refer to the detailed [**LICENSE**](./LICENSE) file within this repository and the **Privacy & Legal Information** modal on the live page for comprehensive policies regarding Data Privacy, Intellectual Property, and Product Disclaimers.
+- You may not copy, clone, scrape, or distribute this repository or any part of it.
+- Commercial or personal reuse of our designs, branding, or assets is strictly forbidden.
+- Please refer to the [**LICENSE**](./LICENSE) file and the **Privacy & Store Policies** modal on the live website for full legal guidelines.
 
 ---
 
 <div align="center">
-  <i>Created with ❤️ by the FahiJawz Collection Team</i>
+  <i>Crafted with Heritage &amp; Elegance • FahiJawz Collection</i>
 </div>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#07090e">
+    <meta name="theme-color" content="#f7f4ed">
     <meta name="description" content="FahiJawz Collection - Where Tradition Meets Trend. Handcrafted heritage products including Crochet and Jamdani for modern lifestyles.">
 
     <!-- Open Graph / Facebook -->
@@ -25,30 +25,48 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Hind+Siliguri:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            --bg-base: #06080d;
-            --bg-surface: #0c101a;
-            --bg-card: rgba(14, 18, 30, 0.80);
-            --bg-glass-inner: rgba(255, 255, 255, 0.03);
-            --gold-primary: #d4af37;
-            --gold-light: #f6e8b1;
-            --gold-bright: #ffe27a;
-            --gold-dark: #966f1e;
-            --gold-gradient: linear-gradient(135deg, #f7e7b4 0%, #d4af37 45%, #aa7a1e 100%);
-            --gold-gradient-hover: linear-gradient(135deg, #fff2cc 0%, #e5c04b 45%, #c59328 100%);
-            --gold-text-gradient: linear-gradient(135deg, #ffffff 15%, #f6e8b1 55%, #d4af37 95%);
-            --text-primary: #f8fafc;
-            --text-secondary: #94a3b8;
-            --text-muted: #64748b;
-            --border-glass: rgba(255, 255, 255, 0.08);
-            --border-gold: rgba(212, 175, 55, 0.28);
-            --border-gold-glow: rgba(212, 175, 55, 0.55);
-            --shadow-card: 0 30px 60px -15px rgba(0,0,0,0.85), 0 0 0 1px rgba(255,255,255,0.06);
-            --shadow-gold-glow: 0 0 40px rgba(212,175,55,0.18);
-            --shadow-btn: 0 10px 25px -5px rgba(212,175,55,0.3);
+            /* ─── Ultra-Luxury Light Marble & Imperial Gold Palette ─── */
+            --bg-base: #f8f5ee;
+            --bg-surface: #ffffff;
+            --bg-card: rgba(255, 255, 255, 0.94);
+
+            /* Logo Alabaster & Cream Marble */
+            --marble-ivory: #ffffff;
+            --marble-cream: #faf6ef;
+            --marble-warm: #f4ece0;
+            --marble-tan: #e5d8c3;
+
+            /* Metallic 3D Gold (sampled from Logo Medallion) */
+            --gold-primary: #c99e32;
+            --gold-light: #fef9ed;
+            --gold-bright: #e5b842;
+            --gold-amber: #b8860b;
+            --gold-dark: #875f1b;
+            --gold-deep: #543b10;
+
+            /* Luxury Light Gradients */
+            --gold-gradient: linear-gradient(135deg, #edd27c 0%, #d4af37 32%, #b58522 75%, #916315 100%);
+            --gold-gradient-hover: linear-gradient(135deg, #f7dd8c 0%, #e0bc45 32%, #c4942c 75%, #a1701b 100%);
+            --gold-text-gradient: linear-gradient(135deg, #3d2b0e 0%, #785415 32%, #b3821a 65%, #63430c 100%);
+            --gold-rim-gradient: linear-gradient(145deg, #fffbf2 0%, #dfb74a 35%, #9b7223 70%, #fdf8e6 100%);
+            --card-sheen: linear-gradient(168deg, rgba(255, 255, 255, 0.96) 0%, rgba(253, 249, 243, 0.97) 55%, rgba(248, 241, 230, 0.98) 100%);
+
+            /* Typography Colors */
+            --text-primary: #1e1710;
+            --text-secondary: #6e5c4a;
+            --text-muted: #968370;
+
+            /* Borders & Shadows */
+            --border-glass: rgba(180, 140, 80, 0.18);
+            --border-gold: rgba(205, 165, 60, 0.38);
+            --border-gold-glow: rgba(212, 175, 55, 0.65);
+            --shadow-card: 0 30px 70px -15px rgba(150, 110, 50, 0.14), 0 10px 25px -5px rgba(0, 0, 0, 0.04), 0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+            --shadow-gold-glow: 0 0 45px rgba(212, 175, 55, 0.15);
+            --shadow-btn: 0 10px 24px -4px rgba(180, 130, 30, 0.35);
             --radius-main: 28px;
             --radius-btn: 14px;
             --radius-pill: 9999px;
@@ -64,8 +82,8 @@
         }
 
         ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: var(--bg-base); }
-        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 3px; }
+        ::-webkit-scrollbar-track { background: #f3ede2; }
+        ::-webkit-scrollbar-thumb { background: #d0ab52; border-radius: 3px; }
         ::-webkit-scrollbar-thumb:hover { background: var(--gold-dark); }
 
         body {
@@ -80,9 +98,10 @@
             position: relative;
             overflow-x: hidden;
             background-image:
-                radial-gradient(ellipse at 50% 0%, rgba(212,175,55,0.09) 0%, transparent 55%),
-                radial-gradient(ellipse at 15% 45%, rgba(59,130,246,0.04) 0%, transparent 45%),
-                radial-gradient(ellipse at 88% 75%, rgba(212,175,55,0.06) 0%, transparent 40%);
+                radial-gradient(ellipse at 50% -10%, rgba(220, 180, 75, 0.22) 0%, transparent 60%),
+                radial-gradient(ellipse at 15% 45%, rgba(215, 175, 100, 0.12) 0%, transparent 45%),
+                radial-gradient(ellipse at 85% 75%, rgba(220, 180, 75, 0.15) 0%, transparent 45%),
+                radial-gradient(circle at 50% 115%, rgba(190, 145, 60, 0.1) 0%, transparent 50%);
             background-attachment: fixed;
         }
 
@@ -92,26 +111,26 @@
             border-radius: 50%;
             pointer-events: none;
             z-index: 0;
-            filter: blur(60px);
+            filter: blur(75px);
         }
         .orb-top {
-            width: 500px; height: 500px;
-            background: radial-gradient(circle, rgba(212,175,55,0.14) 0%, transparent 70%);
+            width: 520px; height: 520px;
+            background: radial-gradient(circle, rgba(224, 185, 80, 0.2) 0%, rgba(240, 215, 150, 0.06) 50%, transparent 70%);
             top: -160px; left: 50%; transform: translateX(-50%);
             animation: orbFloatTop 9s ease-in-out infinite alternate;
         }
         .orb-bottom-right {
-            width: 350px; height: 350px;
-            background: radial-gradient(circle, rgba(212,175,55,0.07) 0%, transparent 70%);
+            width: 400px; height: 400px;
+            background: radial-gradient(circle, rgba(215, 170, 90, 0.14) 0%, transparent 70%);
             bottom: -80px; right: -60px;
             animation: orbFloatCorner 12s ease-in-out infinite alternate-reverse;
         }
         @keyframes orbFloatTop {
-            0%   { transform: translateX(-50%) scale(0.9); opacity: 0.7; }
+            0%   { transform: translateX(-50%) scale(0.9); opacity: 0.8; }
             100% { transform: translateX(-50%) scale(1.15); opacity: 1; }
         }
         @keyframes orbFloatCorner {
-            0%   { transform: scale(0.88); opacity: 0.6; }
+            0%   { transform: scale(0.88); opacity: 0.7; }
             100% { transform: scale(1.12); opacity: 1; }
         }
 
@@ -119,16 +138,25 @@
         .card-container {
             position: relative; z-index: 1;
             max-width: 560px; width: 100%;
-            background: var(--bg-card);
-            -webkit-backdrop-filter: blur(32px);
-            backdrop-filter: blur(32px);
+            background: var(--card-sheen);
+            -webkit-backdrop-filter: blur(36px);
+            backdrop-filter: blur(36px);
             border-radius: var(--radius-main);
             border: 1px solid var(--border-gold);
             box-shadow: var(--shadow-card), var(--shadow-gold-glow);
-            padding: 52px 38px 44px;
+            padding: 50px 38px 42px;
             text-align: center;
             animation: cardIn 0.85s cubic-bezier(0.16,1,0.3,1);
             transition: filter 0.4s ease;
+        }
+        /* Concentric inner ring echoing the logo medallion */
+        .card-container::before {
+            content: '';
+            position: absolute;
+            inset: 7px;
+            border-radius: calc(var(--radius-main) - 7px);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            pointer-events: none;
         }
         @keyframes cardIn {
             from { opacity: 0; transform: translateY(28px) scale(0.965); }
@@ -138,18 +166,20 @@
         /* ─── BADGE ─── */
         .badge-row { margin-bottom: 24px; display: inline-flex; }
         .brand-badge {
-            display: inline-flex; align-items: center; gap: 8px;
-            padding: 7px 15px;
-            background: rgba(212,175,55,0.08);
-            border: 1px solid rgba(212,175,55,0.28);
+            display: inline-flex; align-items: center; gap: 9px;
+            padding: 7px 18px;
+            background: linear-gradient(135deg, #ffffff 0%, #fdf8ee 100%);
+            border: 1px solid rgba(212, 175, 55, 0.4);
             border-radius: var(--radius-pill);
-            font-size: 0.73rem; font-weight: 700;
-            letter-spacing: 0.9px; text-transform: uppercase;
-            color: var(--gold-light);
+            font-family: 'Cinzel', serif;
+            font-size: 0.74rem; font-weight: 700;
+            letter-spacing: 1.4px; text-transform: uppercase;
+            color: #875f1b;
+            box-shadow: 0 4px 15px rgba(180, 140, 60, 0.12), inset 0 1px 0 #ffffff;
         }
         .live-dot {
             width: 7px; height: 7px; border-radius: 50%;
-            background: #22c55e; box-shadow: 0 0 8px #22c55e;
+            background: #cba135; box-shadow: 0 0 8px rgba(203, 161, 53, 0.85);
             animation: blink 2s ease-in-out infinite;
         }
         @keyframes blink {
@@ -157,80 +187,112 @@
             50%      { opacity:0.4; transform:scale(0.8); }
         }
 
-        /* ─── LOGO ─── */
+        /* ─── LOGO (Dual concentric ring echoing the medallion) ─── */
         .logo-link {
             display: inline-block; text-decoration: none; margin-bottom: 26px;
         }
         .logo-ring {
-            width: 138px; height: 138px; border-radius: 50%;
-            background: linear-gradient(135deg, rgba(212,175,55,0.85), rgba(255,255,255,0.12), rgba(150,111,30,0.85));
-            padding: 5px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.55), 0 0 28px rgba(212,175,55,0.28);
+            width: 148px; height: 148px; border-radius: 50%;
+            background: var(--gold-rim-gradient);
+            padding: 4px;
+            box-shadow: 
+                0 14px 35px rgba(150, 110, 40, 0.2),
+                0 0 32px rgba(212, 175, 55, 0.25),
+                inset 0 1px 2px rgba(255, 255, 255, 0.95);
+            transition: var(--transition);
+            position: relative;
+        }
+        .logo-ring::before {
+            content: '';
+            position: absolute;
+            inset: -6px;
+            border-radius: 50%;
+            border: 1px solid rgba(212, 175, 55, 0.45);
+            pointer-events: none;
             transition: var(--transition);
         }
         .logo-ring:hover {
-            transform: scale(1.06);
-            box-shadow: 0 14px 38px rgba(0,0,0,0.65), 0 0 40px rgba(212,175,55,0.42);
-            background: linear-gradient(135deg, #f6e8b1, #d4af37, #f6e8b1);
+            transform: scale(1.05);
+            box-shadow: 
+                0 18px 42px rgba(150, 110, 40, 0.28),
+                0 0 45px rgba(212, 175, 55, 0.45);
+            background: linear-gradient(135deg, #ffffff, #fae8a8, #d4af37, #fae8a8);
+        }
+        .logo-ring:hover::before {
+            inset: -9px;
+            border-color: rgba(184, 134, 11, 0.7);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.35);
         }
         .logo-img {
             width: 100%; height: 100%; object-fit: cover;
-            border-radius: 50%; background: #0d121f;
+            border-radius: 50%; background: transparent;
             display: block;
-            transition: transform 0.4s ease;
+            box-shadow: inset 0 2px 8px rgba(160, 120, 60, 0.15);
+            transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        .logo-link:hover .logo-img { transform: rotate(2deg); }
+        .logo-link:hover .logo-img { transform: scale(1.02); }
 
-        /* ─── HEADING ─── */
+        /* ─── HEADING (Roman Classical Serif from Logo) ─── */
         h1 {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-size: 2.55rem; font-weight: 800;
-            letter-spacing: -0.02em; line-height: 1.15;
+            font-family: 'Cinzel', 'Playfair Display', Georgia, serif;
+            font-size: 2.2rem; font-weight: 700;
+            letter-spacing: 0.07em; line-height: 1.2;
+            text-transform: uppercase;
             margin-bottom: 10px;
             background: var(--gold-text-gradient);
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 1px 1px rgba(255, 255, 255, 0.8));
         }
         .slogan {
-            font-family: 'Playfair Display', serif;
-            font-style: italic; font-size: 1.12rem; font-weight: 400;
-            color: var(--text-secondary); margin-bottom: 22px; letter-spacing: 0.3px;
+            font-family: 'Playfair Display', Georgia, serif;
+            font-style: italic; font-size: 1.1rem; font-weight: 500;
+            color: var(--text-secondary); margin-bottom: 22px; letter-spacing: 0.5px;
         }
 
         /* ─── CRAFT TAGS ─── */
         .craft-tags {
             display: flex; flex-wrap: wrap; justify-content: center;
-            gap: 8px; margin-bottom: 28px;
+            gap: 8px; margin-bottom: 26px;
         }
         .tag-pill {
-            padding: 5px 13px;
-            background: rgba(255,255,255,0.03);
-            border: 1px solid var(--border-glass);
+            padding: 6px 14px;
+            background: rgba(255, 255, 255, 0.88);
+            border: 1px solid rgba(212, 175, 55, 0.32);
             border-radius: var(--radius-pill);
-            font-size: 0.78rem; font-weight: 500;
-            color: var(--text-secondary);
+            font-size: 0.78rem; font-weight: 600;
+            color: #5c4735;
+            box-shadow: 0 2px 8px rgba(160, 120, 60, 0.06);
             transition: var(--transition);
         }
         .tag-pill:hover {
-            background: rgba(212,175,55,0.07);
-            border-color: var(--border-gold);
-            color: var(--gold-light);
-            transform: translateY(-1px);
+            background: #ffffff;
+            border-color: #cba135;
+            color: #875f1b;
+            transform: translateY(-1.5px);
+            box-shadow: 0 6px 16px rgba(180, 130, 40, 0.16);
         }
 
-        /* ─── DIVIDER ─── */
-        .lux-divider {
-            position: relative; height: 1px; width: 100%;
-            background: linear-gradient(90deg, transparent, rgba(212,175,55,0.38), transparent);
+        /* ─── BOTANICAL FLOURISH DIVIDER (Matching Logo Leaves) ─── */
+        .flourish-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
             margin: 0 auto 30px;
+            width: 100%;
         }
-        .lux-divider::after {
-            content: '✦';
-            position: absolute; top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
-            color: var(--gold-primary); font-size: 10px;
-            background: var(--bg-surface); padding: 0 8px;
+        .flourish-line {
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(184, 134, 11, 0.45), transparent);
+        }
+        .flourish-svg {
+            width: 124px;
+            height: 26px;
+            flex-shrink: 0;
+            filter: drop-shadow(0 2px 6px rgba(180, 130, 40, 0.25));
         }
 
         /* ─── BUTTONS ─── */
@@ -255,55 +317,59 @@
         }
         .action-btn svg { width: 20px; height: 20px; fill: currentColor; }
         .btn-arrow {
-            width: 18px; height: 18px; opacity: 0.55;
+            width: 18px; height: 18px; opacity: 0.65;
             flex-shrink: 0; transition: var(--transition);
             fill: none; stroke: currentColor;
             stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round;
         }
         .action-btn:hover .btn-arrow { opacity: 1; transform: translateX(3px); }
 
-        /* Gold Primary */
+        /* Gold Primary (Embossed 3D Gold from Logo) */
         .btn-gold {
             background: var(--gold-gradient);
-            color: #07090e;
-            box-shadow: var(--shadow-btn);
-            border-color: rgba(255,255,255,0.38);
+            color: #ffffff;
+            text-shadow: 0 1px 2px rgba(60, 40, 10, 0.45);
+            box-shadow: var(--shadow-btn), inset 0 1px 1px rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(255, 235, 170, 0.7);
+            letter-spacing: 0.3px;
         }
-        .btn-gold .btn-icon { background: rgba(7,9,14,0.14); color: #07090e; }
+        .btn-gold .btn-icon { background: rgba(255, 255, 255, 0.22); color: #ffffff; }
         .btn-gold:hover {
             background: var(--gold-gradient-hover);
             transform: translateY(-2.5px);
-            box-shadow: 0 16px 32px -5px rgba(212,175,55,0.48);
+            box-shadow: 0 16px 36px -4px rgba(180, 130, 30, 0.5), 0 0 25px rgba(212, 175, 55, 0.3);
         }
 
-        /* Glass Secondary */
+        /* Glass Secondary (Pearl Porcelain & Gold Trim) */
         .btn-glass {
-            background: rgba(255,255,255,0.03);
-            color: var(--text-primary);
-            border-color: var(--border-glass);
-            box-shadow: 0 4px 16px rgba(0,0,0,0.22);
+            background: rgba(255, 255, 255, 0.88);
+            color: #2b2014;
+            border-color: rgba(212, 175, 55, 0.35);
+            box-shadow: 0 4px 18px rgba(160, 120, 60, 0.08), inset 0 1px 0 #ffffff;
         }
         .btn-glass .btn-icon {
-            background: rgba(255,255,255,0.05);
-            color: var(--gold-primary);
-            border: 1px solid rgba(212,175,55,0.16);
+            background: linear-gradient(135deg, rgba(253, 245, 226, 0.95), rgba(246, 232, 202, 0.85));
+            color: #875f1b;
+            border: 1px solid rgba(212, 175, 55, 0.35);
         }
         .btn-glass:hover {
-            background: rgba(255,255,255,0.065);
-            border-color: var(--border-gold);
-            color: #fff;
+            background: #ffffff;
+            border-color: rgba(184, 134, 11, 0.65);
+            color: #0e0a05;
             transform: translateY(-2.5px);
-            box-shadow: 0 10px 26px rgba(0,0,0,0.38), 0 0 18px rgba(212,175,55,0.1);
+            box-shadow: 0 12px 30px rgba(160, 120, 60, 0.16), 0 0 22px rgba(212, 175, 55, 0.18);
         }
         .btn-glass:hover .btn-icon {
-            background: rgba(212,175,55,0.14); border-color: var(--gold-primary); color: var(--gold-light);
+            background: rgba(212, 175, 55, 0.2);
+            border-color: #b8860b;
+            color: #704c10;
         }
 
         /* Shimmer sweep */
         .btn-shimmer::before {
             content: ''; position: absolute;
             top: 0; left: -100%; width: 55%; height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.22), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
             transform: skewX(-22deg); transition: 0.65s ease;
         }
         .btn-shimmer:hover::before { left: 150%; }
@@ -317,44 +383,44 @@
         }
         .map-label {
             display: flex; align-items: center; gap: 7px;
+            font-family: 'Cinzel', serif;
             font-size: 0.82rem; font-weight: 700;
-            text-transform: uppercase; letter-spacing: 1.2px;
-            color: var(--gold-light);
+            text-transform: uppercase; letter-spacing: 1.3px;
+            color: #875f1b;
         }
         .map-label svg { width: 14px; height: 14px; fill: currentColor; }
         .map-ext-link {
             display: flex; align-items: center; gap: 4px;
-            font-size: 0.76rem; color: var(--text-secondary);
+            font-size: 0.76rem; color: #786551;
             text-decoration: none; transition: var(--transition);
         }
-        .map-ext-link:hover { color: var(--gold-primary); }
+        .map-ext-link:hover { color: #875f1b; }
         .map-ext-link svg { width: 12px; height: 12px; fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
         .map-frame {
             width: 100%; border-radius: 18px; overflow: hidden;
             border: 1px solid var(--border-gold);
-            background: #080c14;
-            box-shadow: 0 12px 32px rgba(0,0,0,0.42);
+            background: #ffffff;
+            box-shadow: 0 10px 28px rgba(160, 120, 60, 0.1);
             transition: var(--transition);
         }
         .map-frame:hover {
             border-color: var(--border-gold-glow);
-            box-shadow: 0 18px 40px rgba(0,0,0,0.55), 0 0 22px rgba(212,175,55,0.16);
+            box-shadow: 0 16px 36px rgba(160, 120, 60, 0.18), 0 0 25px rgba(212, 175, 55, 0.2);
         }
         .map-frame iframe {
             width: 100%; height: 225px; display: block; border: 0;
-            filter: grayscale(0.25) contrast(1.1) invert(0.9) hue-rotate(180deg);
+            filter: saturate(0.9) contrast(1.02);
             transition: filter 0.4s ease;
         }
-        .map-frame:hover iframe { filter: none; }
 
         /* ─── FOOTER ─── */
         footer {
             margin-top: 36px; padding-top: 24px;
-            border-top: 1px solid rgba(255,255,255,0.05);
+            border-top: 1px solid rgba(212, 175, 55, 0.22);
             display: flex; flex-direction: column; align-items: center; gap: 5px;
         }
-        .footer-copy { font-size: 0.82rem; color: var(--text-secondary); }
-        .footer-tag  { font-size: 0.74rem; color: var(--text-muted); letter-spacing: 0.5px; }
+        .footer-copy { font-size: 0.82rem; color: #7a6652; }
+        .footer-tag  { font-size: 0.74rem; color: #875f1b; letter-spacing: 0.8px; font-family: 'Cinzel', serif; font-weight: 600; }
 
         /* ─── PROTECTION ─── */
         .content-protected {
@@ -366,24 +432,33 @@
         /* ─── MODAL ─── */
         .modal-backdrop {
             display: none; position: fixed; z-index: 999; inset: 0;
-            background: rgba(3,5,9,0.84);
-            -webkit-backdrop-filter: blur(18px);
-            backdrop-filter: blur(18px);
+            background: rgba(35, 26, 17, 0.52);
+            -webkit-backdrop-filter: blur(14px);
+            backdrop-filter: blur(14px);
             opacity: 0; transition: opacity 0.3s ease;
             align-items: center; justify-content: center; padding: 20px;
         }
         .modal-backdrop.show { display: flex; opacity: 1; }
         .modal-box {
-            background: linear-gradient(145deg, #101626 0%, #070a12 100%);
+            background: linear-gradient(165deg, #ffffff 0%, #faf6ee 60%, #f5eee0 100%);
             border: 1px solid var(--border-gold);
             border-radius: 24px; max-width: 520px; width: 100%;
             max-height: 88vh; overflow-y: auto;
             padding: 34px 28px 28px;
-            box-shadow: 0 32px 80px rgba(0,0,0,0.85), 0 0 30px rgba(212,175,55,0.16);
+            box-shadow: 0 35px 80px rgba(70, 50, 25, 0.25), 0 0 40px rgba(212, 175, 55, 0.18), inset 0 1px 0 #ffffff;
             position: relative;
             transform: translateY(22px) scale(0.96);
             transition: transform 0.38s cubic-bezier(0.16,1,0.3,1);
             text-align: left;
+        }
+        /* Concentric inner border matching logo */
+        .modal-box::before {
+            content: '';
+            position: absolute;
+            inset: 6px;
+            border-radius: 18px;
+            border: 1px solid rgba(212, 175, 55, 0.22);
+            pointer-events: none;
         }
         .modal-backdrop.show .modal-box { transform: translateY(0) scale(1); }
 
@@ -391,71 +466,127 @@
             display: flex; align-items: flex-start;
             justify-content: space-between; gap: 12px;
             margin-bottom: 22px; padding-bottom: 16px;
-            border-bottom: 1px solid var(--border-glass);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
         }
         .modal-head h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.55rem; color: var(--gold-light); font-weight: 700; line-height: 1.2;
+            font-size: 1.55rem; color: #4a3410; font-weight: 700; line-height: 1.2;
         }
-        .modal-head .modal-sub { font-size: 0.79rem; color: var(--text-secondary); margin-top: 3px; }
+        .modal-head .modal-sub { font-size: 0.8rem; color: #786551; margin-top: 3px; font-weight: 500; }
         .close-btn {
-            background: rgba(255,255,255,0.04);
-            border: 1px solid var(--border-glass);
-            color: var(--text-secondary);
+            background: rgba(212, 175, 55, 0.08);
+            border: 1px solid rgba(212, 175, 55, 0.28);
+            color: #704c10;
             width: 34px; height: 34px; border-radius: 50%;
             display: flex; align-items: center; justify-content: center;
             cursor: pointer; font-size: 1.05rem;
             transition: var(--transition); flex-shrink: 0;
         }
         .close-btn:hover {
-            color: var(--gold-light); border-color: var(--gold-primary);
-            background: rgba(212,175,55,0.1); transform: rotate(90deg);
+            color: #ffffff; border-color: var(--gold-amber);
+            background: var(--gold-amber); transform: rotate(90deg);
         }
 
         /* Policy Cards */
         .policy-list { display: flex; flex-direction: column; gap: 14px; margin-bottom: 22px; }
         .policy-card {
-            background: rgba(255,255,255,0.02);
-            border: 1px solid rgba(255,255,255,0.05);
+            background: rgba(255, 255, 255, 0.75);
+            border: 1px solid rgba(212, 175, 55, 0.24);
             border-radius: 14px; padding: 15px 17px;
+            box-shadow: 0 3px 12px rgba(160, 120, 60, 0.04);
             transition: var(--transition);
         }
         .policy-card:hover {
-            background: rgba(255,255,255,0.035);
-            border-color: rgba(212,175,55,0.2);
+            background: #ffffff;
+            border-color: rgba(184, 134, 11, 0.5);
+            box-shadow: 0 6px 20px rgba(160, 120, 60, 0.1);
         }
         .policy-title {
             display: flex; align-items: center; gap: 8px;
-            color: var(--gold-light); font-size: 0.9rem; font-weight: 700;
+            color: #704c10; font-size: 0.92rem; font-weight: 700;
             margin-bottom: 7px;
         }
-        .policy-title svg { width: 15px; height: 15px; fill: var(--gold-primary); flex-shrink: 0; }
+        .policy-title svg { width: 15px; height: 15px; fill: #b8860b; flex-shrink: 0; }
         .policy-card p {
             font-size: 0.84rem; line-height: 1.66;
             color: var(--text-secondary);
         }
         .policy-card p strong { color: var(--text-primary); }
+        .policy-points {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 10px;
+        }
+        .policy-point {
+            display: flex;
+            align-items: flex-start;
+            gap: 11px;
+            padding-bottom: 11px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+        }
+        .policy-point:last-child {
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        .point-num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 26px;
+            height: 24px;
+            padding: 0 4px;
+            background: linear-gradient(135deg, #edd588 0%, #d4af37 100%);
+            border: 1px solid rgba(255, 245, 200, 0.9);
+            border-radius: 6px;
+            font-family: 'Hind Siliguri', sans-serif;
+            font-size: 0.84rem;
+            font-weight: 700;
+            color: #ffffff;
+            flex-shrink: 0;
+            margin-top: 2px;
+            box-shadow: 0 2px 6px rgba(140, 95, 20, 0.28);
+        }
+        .point-content {
+            flex: 1;
+        }
+        .point-content .bn-text {
+            font-family: 'Hind Siliguri', 'Plus Jakarta Sans', system-ui, sans-serif;
+            font-size: 0.89rem;
+            line-height: 1.65;
+            color: #2b2014;
+            font-weight: 600;
+        }
+        .point-content .en-sub {
+            display: block;
+            font-size: 0.77rem;
+            line-height: 1.48;
+            color: #7a6652;
+            margin-top: 3px;
+        }
         .btn-done {
             width: 100%; padding: 13px;
-            background: rgba(212,175,55,0.12);
-            border: 1px solid var(--border-gold);
-            color: var(--gold-light); border-radius: var(--radius-btn);
+            background: linear-gradient(135deg, #edd27c 0%, #d4af37 35%, #b58522 80%, #916315 100%);
+            border: 1px solid rgba(255, 240, 180, 0.7);
+            color: #ffffff; border-radius: var(--radius-btn);
             font-family: 'Plus Jakarta Sans', sans-serif;
-            font-size: 0.92rem; font-weight: 700;
+            font-size: 0.94rem; font-weight: 700;
             cursor: pointer; transition: var(--transition);
+            text-shadow: 0 1px 2px rgba(60, 40, 10, 0.45);
+            box-shadow: 0 8px 25px rgba(180, 130, 30, 0.35);
         }
         .btn-done:hover {
-            background: var(--gold-gradient); color: #07090e;
-            box-shadow: 0 8px 22px rgba(212,175,55,0.35);
+            background: linear-gradient(135deg, #f7dd8c 0%, #e0bc45 35%, #c4942c 80%, #a1701b 100%);
+            box-shadow: 0 12px 30px rgba(180, 130, 30, 0.48), 0 0 25px rgba(212, 175, 55, 0.3);
         }
 
         /* ─── RESPONSIVE ─── */
         @media (max-width: 480px) {
             body { padding: 28px 12px; }
             .card-container { padding: 38px 20px 30px; border-radius: 22px; }
-            h1 { font-size: 2.1rem; }
-            .slogan { font-size: 1rem; }
-            .logo-ring { width: 118px; height: 118px; }
+            h1 { font-size: 1.85rem; }
+            .slogan { font-size: 0.98rem; }
+            .logo-ring { width: 122px; height: 122px; }
             .action-btn { padding: 14px 18px; font-size: 0.92rem; }
             .modal-box { padding: 22px 16px 18px; border-radius: 20px; }
         }
@@ -496,8 +627,35 @@
             <span class="tag-pill">🚚 Nationwide Delivery</span>
         </div>
 
-        <!-- Divider -->
-        <div class="lux-divider"></div>
+        <!-- Logo Botanical Flourish Divider -->
+        <div class="flourish-divider" aria-hidden="true">
+            <span class="flourish-line"></span>
+            <svg class="flourish-svg" viewBox="0 0 124 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Center Diamond Ornament -->
+                <path d="M62 6L66.5 13L62 20L57.5 13Z" fill="url(#flourishGold)"/>
+                <circle cx="62" cy="13" r="1.5" fill="#ffffff"/>
+                <!-- Left Foliage (Mirroring Logo Medallion) -->
+                <path d="M55 13C47 12 38 9 26 5C20 3 13 2 6 3C10 6 15 8 22 8C33 8 43 11 53 13" stroke="url(#flourishGold)" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M43 11C39 7 33 5 26 6C30 8 34 11 37 12" fill="url(#flourishGold)"/>
+                <path d="M31 8C27 4 21 3 15 4C19 6 23 9 26 9" fill="url(#flourishGold)"/>
+                <path d="M47 15C42 18 36 19 29 18C33 16 37 14 41 13" fill="url(#flourishGold)"/>
+                <!-- Right Foliage (Mirroring Logo Medallion) -->
+                <path d="M69 13C77 12 86 9 98 5C104 3 111 2 118 3C114 6 109 8 102 8C91 8 81 11 71 13" stroke="url(#flourishGold)" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M81 11C85 7 91 5 98 6C94 8 90 11 87 12" fill="url(#flourishGold)"/>
+                <path d="M93 8C97 4 103 3 109 4C105 6 101 9 98 9" fill="url(#flourishGold)"/>
+                <path d="M77 15C82 18 88 19 95 18C91 16 87 14 83 13" fill="url(#flourishGold)"/>
+                <defs>
+                    <linearGradient id="flourishGold" x1="0" y1="0" x2="124" y2="0" gradientUnits="userSpaceOnUse">
+                        <stop offset="0%" stop-color="#91681e" stop-opacity="0.25"/>
+                        <stop offset="25%" stop-color="#d4af37"/>
+                        <stop offset="50%" stop-color="#faeed0"/>
+                        <stop offset="75%" stop-color="#d4af37"/>
+                        <stop offset="100%" stop-color="#91681e" stop-opacity="0.25"/>
+                    </linearGradient>
+                </defs>
+            </svg>
+            <span class="flourish-line"></span>
+        </div>
 
         <!-- Action Buttons -->
         <div class="action-group">
@@ -553,7 +711,7 @@
 
         <!-- Footer -->
         <footer>
-            <div class="footer-copy">&copy; <span id="copyrightYear"></span> FahiJawz Collection. All rights reserved.</div>
+            <div class="footer-copy">&copy; <span id="copyrightYear"></span><script>document.getElementById('copyrightYear').textContent = new Date().getFullYear();</script> FahiJawz Collection. All rights reserved.</div>
             <div class="footer-tag">Crafted with Heritage &amp; Elegance</div>
         </footer>
 
@@ -565,8 +723,8 @@
 
             <div class="modal-head">
                 <div>
-                    <h2 id="modalTitle">Privacy &amp; Legal Info</h2>
-                    <div class="modal-sub">Official Policies &amp; Customer Protection Terms</div>
+                    <h2 id="modalTitle">Privacy &amp; Store Policies</h2>
+                    <div class="modal-sub">Official Policies &amp; Terms • অফিসিয়াল পলিসি ও শর্তাবলী</div>
                 </div>
                 <button type="button" class="close-btn" onclick="toggleModal(false)" aria-label="Close">&times;</button>
             </div>
@@ -576,41 +734,165 @@
                 <div class="policy-card">
                     <div class="policy-title">
                         <svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
-                        <span>1. Data Privacy</span>
+                        <span>1. Data Privacy (তথ্য গোপনীয়তা)</span>
                     </div>
-                    <p>We only collect essential customer details (name, contact number, delivery address) to process your orders. Your information is strictly confidential and never shared with third parties, except verified delivery couriers.</p>
+                    <div class="policy-points">
+                        <div class="policy-point">
+                            <span class="point-num">১</span>
+                            <div class="point-content">
+                                <p class="bn-text">আমরা শুধুমাত্র আপনার অর্ডার সঠিকভাবে ডেলিভারি করার জন্য প্রয়োজনীয় তথ্য (নাম, মোবাইল নম্বর ও পূর্ণ ঠিকানা) গ্রহণ করি।</p>
+                                <span class="en-sub">We only collect essential details (name, contact number, delivery address) strictly to process and deliver your orders.</span>
+                            </div>
+                        </div>
+                        <div class="policy-point">
+                            <span class="point-num">২</span>
+                            <div class="point-content">
+                                <p class="bn-text">আপনার ব্যক্তিগত তথ্য সম্পূর্ণ সুরক্ষিত ও গোপনীয় থাকবে। অনুমোদিত ডেলিভারি কুরিয়ার সার্ভিস ব্যতীত অন্য কোনো তৃতীয় পক্ষের সাথে কোনো তথ্য শেয়ার করা হয় না।</p>
+                                <span class="en-sub">Your personal information is strictly confidential and never shared with third parties, except authorized delivery courier partners.</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="policy-card">
                     <div class="policy-title">
                         <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
-                        <span>2. Intellectual Property</span>
+                        <span>2. Intellectual Property (মেধাস্বত্ব ও কপিরাইট)</span>
                     </div>
-                    <p>All photos, videos, design patterns, logos, and descriptions on this page are the exclusive intellectual property of <strong>FahiJawz Collection</strong>. Unauthorized reproduction or commercial use is strictly prohibited.</p>
+                    <div class="policy-points">
+                        <div class="policy-point">
+                            <span class="point-num">১</span>
+                            <div class="point-content">
+                                <p class="bn-text">এই পেজ ও ওয়েবসাইটের সকল ছবি, ভিডিও, পোশাকের নকশা, লোগো এবং বিবরণী FahiJawz Collection-এর নিজস্ব এবং আইনগত মেধাস্বত্ব।</p>
+                                <span class="en-sub">All photographs, videos, outfit designs, logos, and descriptions are the exclusive intellectual property of FahiJawz Collection.</span>
+                            </div>
+                        </div>
+                        <div class="policy-point">
+                            <span class="point-num">২</span>
+                            <div class="point-content">
+                                <p class="bn-text">কর্তৃপক্ষের লিখিত অনুমতি ব্যতীত আমাদের ছবি বা ডিজাইন কোনো প্রকার অনুলিপি, ডাউনলোড, পুনঃব্যবহার বা বাণিজ্যিক কাজে ব্যবহার সম্পূর্ণ নিষিদ্ধ।</p>
+                                <span class="en-sub">Unauthorized copying, downloading, commercial reuse, or reproduction of our design assets is strictly prohibited.</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="policy-card">
                     <div class="policy-title">
                         <svg viewBox="0 0 24 24"><path d="M12 3L2 12h3v8h14v-8h3L12 3zm0 4.5l5 4.5h-2v6h-6v-6H7l5-4.5z"/></svg>
-                        <span>3. Handcrafted Product Disclaimer</span>
+                        <span>3. Handcrafted Product Disclaimer (হস্তশিল্প পণ্যের বিশেষত্ব)</span>
                     </div>
-                    <p>Each item is meticulously handcrafted. Slight variations in color, weave, or texture are inherent characteristics that celebrate the unique beauty of genuine artisanal work.</p>
+                    <div class="policy-points">
+                        <div class="policy-point">
+                            <span class="point-num">১</span>
+                            <div class="point-content">
+                                <p class="bn-text">আমাদের প্রতিটি জামদানি ও ক্রোশেট পণ্য নিপুণ কারিগরের হাতে পরম যত্নে তৈরি (Authentic Handcrafted)।</p>
+                                <span class="en-sub">Each Jamdani and Crochet creation is meticulously handcrafted with care by authentic artisans.</span>
+                            </div>
+                        </div>
+                        <div class="policy-point">
+                            <span class="point-num">২</span>
+                            <div class="point-content">
+                                <p class="bn-text">হাতে তৈরির কারণে প্রতিটি পণ্যের রঙ, সুতার বুনন বা নকশায় সূক্ষ্ম তারতম্য হতে পারে—যা ত্রুটি নয়, বরং খাঁটি হস্তশিল্পের আসল সৌন্দর্য।</p>
+                                <span class="en-sub">Due to artisanal handcrafted nature, subtle natural variations in texture, weave, or tone are unique hallmarks of genuine craftsmanship.</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="policy-card">
                     <div class="policy-title">
-                        <svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-2 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
-                        <span>4. Delivery &amp; Payment</span>
+                        <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+                        <span>4. Terms &amp; Conditions (শর্তাবলী)</span>
                     </div>
-                    <p>Orders are confirmed once full delivery details are provided. <strong>FahiJawz Collection</strong> is not liable for delays caused by third-party courier services. Please verify your parcel upon receipt.</p>
+                    <div class="policy-points">
+                        <div class="policy-point">
+                            <span class="point-num">১</span>
+                            <div class="point-content">
+                                <p class="bn-text">ঢাকার ভিতর ২-৪ দিন ও ঢাকার বাহিরে ৩-৫ দিনের ভিতরে ডেলিভারি পাবেন। কোন ক্ষেত্রে Shipment জটিলতার কারনে ডেলিভারি সময় কম - বেশী হতে পারে।</p>
+                                <span class="en-sub">Delivery within 2–4 days inside Dhaka &amp; 3–5 days outside Dhaka. Delivery timeline may vary due to courier shipment logistics.</span>
+                            </div>
+                        </div>
+                        <div class="policy-point">
+                            <span class="point-num">২</span>
+                            <div class="point-content">
+                                <p class="bn-text">আমাদের কোনো বুকিং / রিটার্ন / রিফান্ড / এক্সচেঞ্জ সিস্টেম নেই, তাই ডেলিভারির সময় ড্রেস গুলো ভালো ভাবে দেখে নিবেন।</p>
+                                <span class="en-sub">We do not have any booking, return, refund, or exchange system. Please inspect dresses thoroughly upon delivery.</span>
+                            </div>
+                        </div>
+                        <div class="policy-point">
+                            <span class="point-num">৩</span>
+                            <div class="point-content">
+                                <p class="bn-text">ডেলিভারি ম্যান পণ্য বুঝিয়ে দেওয়ার পর পরবর্তীতে কোন অভিযোগ গ্রহণযোগ্য হবে না।</p>
+                                <span class="en-sub">No complaints will be accepted once the delivery person has handed over the product.</span>
+                            </div>
+                        </div>
+                        <div class="policy-point">
+                            <span class="point-num">৪</span>
+                            <div class="point-content">
+                                <p class="bn-text">ড্রেস Trial দেওয়া যাবে না। কারণ, সম্মানিত ক্রেতার সুবিধার্থে আমরা Trialed ড্রেস পুনরায় বিক্রি করিনা। তাই, শুধু মাত্র ডেলিভারি ম্যান এর সামনে পণ্য চেক করতে পারবেন।</p>
+                                <span class="en-sub">Dress trials are not permitted to ensure customer hygiene, as trialed dresses are never resold. You may only inspect the product in front of the delivery person.</span>
+                            </div>
+                        </div>
+                        <div class="policy-point">
+                            <span class="point-num">৫</span>
+                            <div class="point-content">
+                                <p class="bn-text">SIZE DETAILS দেখে ORDER করবেন।</p>
+                                <span class="en-sub">Please review size details carefully before placing your order.</span>
+                            </div>
+                        </div>
+                        <div class="policy-point">
+                            <span class="point-num">৬</span>
+                            <div class="point-content">
+                                <p class="bn-text">৩-৫ টি ORDER করে ১ টি রাখবেন এটি মোটেই কাম্য নয়।</p>
+                                <span class="en-sub">Ordering 3–5 items with the intent of keeping only 1 is strictly unacceptable.</span>
+                            </div>
+                        </div>
+                        <div class="policy-point">
+                            <span class="point-num">৭</span>
+                            <div class="point-content">
+                                <p class="bn-text">Product Color May Slightly Vary Due to displays and devices. তাই Color দয়া করে ডেলিভারি ম্যান এর সামনে চেক করে নিবেন।</p>
+                                <span class="en-sub">Product color may vary slightly due to device displays. Please verify the color in front of the delivery person.</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="policy-card">
                     <div class="policy-title">
-                        <svg viewBox="0 0 24 24"><path d="M19 8l-4 4h3c0 3.31-2.69 6-6 6-1.01 0-1.97-.25-2.8-.7l-1.46 1.46C8.97 19.54 10.43 20 12 20c4.42 0 8-3.58 8-8h3l-4-4zM6 12c0-3.31 2.69-6 6-6 1.01 0 1.97.25 2.8.7l1.46-1.46C15.03 4.46 13.57 4 12 4c-4.42 0-8 3.58-8 8H1l4 4 4-4H6z"/></svg>
-                        <span>5. Return &amp; Exchange Policy</span>
+                        <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+                        <span>5. General Conditions (সাধারণ শর্তাবলী)</span>
                     </div>
-                    <p>If you notice any manufacturing defect, please report it immediately with unboxing documentation within 24 hours of delivery for prompt verification and assistance.</p>
+                    <div class="policy-points">
+                        <div class="policy-point">
+                            <span class="point-num">১</span>
+                            <div class="point-content">
+                                <p class="bn-text">সম্মানিত ক্রেতা , কিছু কারণে পণ্য প্রক্রিয়াকরণের সময় পণ্য স্টক আউট অথবা মান নিয়ন্ত্রণের সময় পণ্য ত্রুটিপূর্ণ পাওয়া গেলে, আমরা অর্ডার বাতিল করার অধিকার সংরক্ষণ করি।</p>
+                                <span class="en-sub">Valued customer, we reserve the right to cancel an order if an item goes out of stock during processing or fails quality control.</span>
+                            </div>
+                        </div>
+                        <div class="policy-point">
+                            <span class="point-num">২</span>
+                            <div class="point-content">
+                                <p class="bn-text">Facebook-এ প্রদর্শিত আমাদের পণ্যের রঙ এবং ছবি যথাসম্ভব নির্ভুলভাবে প্রদর্শন করার জন্য আমরা যথাসাধ্য চেষ্টা করেছি। আমরা গ্যারান্টি দিতে পারি না যে আপনার ডিভাইস এবং ডিসপ্লে আপনাকে নির্ভুলভাবে কোনও রঙ দেখাবে।</p>
+                                <span class="en-sub">We strive to show colors and images accurately on Facebook, but cannot guarantee your device display shows colors with 100% fidelity.</span>
+                            </div>
+                        </div>
+                        <div class="policy-point">
+                            <span class="point-num">৩</span>
+                            <div class="point-content">
+                                <p class="bn-text">আমরা গ্যারান্টি দিচ্ছি না যে আমাদের সেবা নিরবচ্ছিন্ন, সময়োপযোগী, অথবা ত্রুটিমুক্ত হবে। তবুও, আমরা আমাদের যথাসাধ্য চেষ্টা করব ত্রুটিমুক্ত সেবা প্রদান করার।</p>
+                                <span class="en-sub">We do not guarantee uninterrupted, timely, or error-free service, though we always strive to provide the highest quality service.</span>
+                            </div>
+                        </div>
+                        <div class="policy-point">
+                            <span class="point-num">৪</span>
+                            <div class="point-content">
+                                <p class="bn-text">আমরা এই নিশ্চয়তা দিচ্ছি না যে আপনার দ্বারা ক্রয়কৃত পণ্যের মান আপনার প্রত্যাশা পূরণ করবে। তাই ডেলিভারি ম্যান এর সামনে সব কিছু বুঝে নিবেন।</p>
+                                <span class="en-sub">We cannot guarantee the product will match subjective personal expectations. Please inspect and verify everything in front of the delivery person before accepting.</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
             </div>
